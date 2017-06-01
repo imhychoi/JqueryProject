@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>유캔 Do Eat :: 대한민국 1등 배달앱</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<link rel="stylesheet" href="css/common.css" media="screen">
+<link rel="stylesheet" href="css/list_shop.css" media="screen">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<script src="js/respond.proxy.min.js"></script>
+	<script src="js/html5shiv.js"></script>
+	<html class="lt-ie-9">
+	<![endif]-->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/placeholder.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.migrate.min.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/jquery.lazyloadimg.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ui.common.js"></script>
+<script src="js/common.js"></script>
+<script src="js/jquery.masonry.min.js"></script>
+<script src="js/jquery.carouFredSel.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/kakao.link.js"></script>
+<!--[if !IE 8]><!-->
+<script src="js/jquery.backgroundPosition.min.js"></script>
+<!--[endif]-->
+</head>
+<body>
+
+<!-- Wrap -->
+<div id="wrap">
+	<!-- Header -->
+	<header>		
+		<!-- Basic TP Area -->
+		<section class="basic-tp-area">
+			<!-- TP Area -->
+			<section class="tp-area">
+
+				<h1>
+					<a href="index.html" class="ir-el">권임심조</a>
+				</h1>
+				<div class="gnb-wrap">
+					<span class="navigation"
+						onclick="toggleLayer('gnb','navigation');return false;">네비게이션</span>
+					<ul class="list-inline gnb">
+					<li><a href="login.html">로그인</a>	<em>|</em></li>
+					<li><a href="signup_step1.html">회원가입</a> <em>|</em></li>
+					<li><a href="faq.html">고객센터</a></li>
+					</ul>
+				</div>				
+
+				<!-- Search Form -->
+				<form class="header-search cate-srch">
+				<fieldset>
+					<legend class="sr-only">검색</legend>
+					<!-- Keyword -->
+					<div class="input-group srch">
+						<input type="text" class="form-control" id="sch_kwd"
+							onkeypress="evtKeyPress(event)" placeholder="업소명을 검색해주세요" 
+							style="ime-mode: inactive" > 
+						<span class="input-group-btn">
+							<button type="button" class="btn" onclick="fn_sch_kwd(); return false;">검색</button>
+						</span>
+					</div>
+					<!--// Keyword -->
+				</fieldset>
+				</form>
+				<!--// Search Form -->
+			</section>
+			<!--// TP Area -->
+
+			<!-- Category -->
+			<div class="category-set">
+				<dl class="dl-horizontal">
+				<dt class="dt-category"
+					onclick="toggleLayer('cate-srch','dt-category');return false;">카테고리
+					:
+				</dt>
+				<dd class="cate-srch">
+					<div class="cate-area">
+						<ul id="category" class="list-inline list-unstyled">
+						<li class="chicken"	><a href="list_shop.html">치킨</a> <em>|</em></li>
+						<li class="chinese"	><a href="list_shop.html">중국집</a> <em>|</em></li>
+						<li class="pizza"	><a href="list_shop.html">피자</a> <em>|</em></li>
+						<li class="korean"	><a href="list_shop.html">한식,분식</a> <em>|</em></li>
+						<li class="jokbal"	><a href="list_shop.html">족발,보쌈</a> <em>|</em></li>
+						<li class="night"	><a href="list_shop.html">야식</a> <em>|</em></li>
+						<li class="japanese"><a href="list_shop.html">돈까스,회,일식</a> <em>|</em></li>
+						<li class="tang"	><a href="list_shop.html">찜,탕</a> <em>|</em></li>
+						<li class="dosirak"	><a href="list_shop.html">도시락</a> <em>|</em></li>
+						<li class="fastfood"><a href="list_shop.html">패스트푸드</a> <em>|</em></li>
+						<li class="baro"	><a href="list_shop.html">바로결제</a> <em>|</em></li>
+						<li class="etc"		><a href="list_shop.html">기타</a> <em>|</em></li>
+						<li class="all"		><a href="list_shop.html">모아보기</a></li>
+						</ul>
+					</div>
+				</dd>
+				</dl>
+			</div>
+			<!--// Category -->
+
+			
+		</section>
+		<!--// Basic TP Area -->
+	</header>
+	<!--// Header -->
+
+
+	<!-- Container -->
+	<div class="container">
+		<!-- Result Info -->
+		<div class="srch-result-info of-h small">
+			<span class="pull-left"> 홈 &gt; <strong>치킨</strong><em>|</em><strong>서울
+					송파구 석촌동</strong>을 중심으로 총 <strong class="text-primary">8</strong>곳을 찾았습니다.
+			</span>
+			<form name="list_sort" id="list_sort"
+				action="" method="post">
+				<div class="pull-right">
+					<select class="select" name="sort" id="sort" style="width: 150px;">
+						<option value="default">기본정렬로 보기</option>
+						<option value="call">주문 순으로 보기</option>
+						<option value="pnt">평점 순으로 보기</option>
+						<option value="favorite">즐겨찾기 순으로 보기</option>
+					</select>
+					<!-- 정렬 -->
+				</div>
+			</form>
+		</div>
+		<!--// Result Info -->
+		<!-- Shop List	-->
+		<section class="shop-list">
+			<div class="row" id="loadData">
+				<!-- Column -->
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="thumbnail shop-list-panel of-h">
+						<!-- 썸네일	이미지 -->
+						<span class="inner-brd"> 
+							<a href="detail_shop.html">
+								<span class="mask"></span>
+								<img class="lazy" alt="쌀통닭 신천점" data-original="images/shopList/shop001.jpg" src="images/common/white.gif">
+							</a>
+						</span>
+						<!--// 썸네일	이미지 -->
+						<div class="caption">
+							<!-- 업소명 -->
+							<h2 class="text-ellipsis" title="쌀통닭-신천점">쌀통닭-신천점</h2>
+							<!--// 업소명 -->
+							<!-- 별점 -->
+							<span class="rating"> 
+								<span class="img_star star_rate">
+									<span class="img_star inner_star" style="width: 73.60%;">별점</span>
+								</span>
+							</span>
+							<!--// 별점 -->							
+							<div class="addr">서울특별시 송파구 석촌동</div>							
+							<!-- 리뷰/사장님댓글 -->
+							<div class="shop-info-fav">
+								<span>리뷰 
+									<strong class="text-primary"><a href="#" onclick="alert('리뷰');">22</a></strong>
+								</span>
+								<span>사장님댓글 
+									<strong class="text-primary"><a href="#" onclick="alert('사장님댓글');">23</a></strong>
+								</span>
+							</div>
+							<!--// 리뷰/사장님댓글 -->
+							<!-- 결제방식 -->
+							<div class="shop-info-tag pay">
+								<span class="in-app"><a href="#" onclick="alert('바로결제');">바로결제</a></span> 
+								<span class="offline"><a href="#" onclick="alert('만나서결제');">만나서결제</a></span>
+							</div>
+							<!--// 결제방식 -->
+						</div>
+					</div>
+				</div>
+				<!--// Column -->
+				<!-- Column -->
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="thumbnail shop-list-panel of-h">
+						<!-- 썸네일	이미지 -->
+						<span class="inner-brd"> 
+							<span class="mask"></span> 
+							<img class="lazy" alt="더바스켓 순살치킨 국물떡볶이" data-original="images/shopList/shop002.jpg" src="images/common/white.gif">
+						</span>
+						<!--// 썸네일	이미지 -->
+						<div class="caption">
+							<!-- 업소명 -->
+							<h2 class="text-ellipsis" title="더바스켓-순살치킨-국물떡볶이">
+								더바스켓-순살치킨-국물떡볶이</h2>
+							<!--// 업소명 -->
+							<!-- 별점 -->
+							<span class="rating"> 
+								<span class="img_star star_rate">
+									<span class="img_star inner_star" style="width: 73.60%;">별점</span>
+								</span>
+							</span>
+							<!--// 별점 -->							
+							<div class="addr">서울특별시 송파구 석촌동</div>							
+							<!-- 리뷰/사장님댓글 -->
+							<div class="shop-info-fav">
+								<span>리뷰 
+									<strong class="text-primary"><a href="#" onclick="alert('리뷰');">22</a></strong>
+								</span>
+								<span>사장님댓글 
+									<strong class="text-primary"><a href="#" onclick="alert('사장님댓글');">23</a></strong>
+								</span>
+							</div>
+							<!--// 리뷰/사장님댓글 -->
+							<!-- 결제방식 -->
+							<div class="shop-info-tag pay">
+								<span class="in-app"><a href="#" onclick="alert('바로결제');">바로결제</a></span> 
+								<span class="offline"><a href="#" onclick="alert('만나서결제');">만나서결제</a></span>
+							</div>
+							<!--// 결제방식 -->
+						</div>
+					</div>
+				</div>
+				<!--// Column -->
+				<!-- Column -->
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="thumbnail shop-list-panel of-h">
+						<!-- 썸네일	이미지 -->
+						<span class="inner-brd">
+							<span class="mask"></span> 
+							<img class="lazy" alt="호식이두마리치킨 잠실1호점" data-original="images/shopList/shop003.jpg" src="images/common/white.gif">
+						</span>
+						<!--// 썸네일	이미지 -->
+						<div class="caption">
+							<!-- 업소명 -->
+							<h2 class="text-ellipsis" title="호식이두마리치킨-잠실1호점">
+								호식이두마리치킨-잠실1호점</h2>
+							<!--// 업소명 -->
+							<!-- 별점 -->
+							<span class="rating"> 
+								<span class="img_star star_rate">
+									<span class="img_star inner_star" style="width: 73.60%;">별점</span>
+								</span>
+							</span>
+							<!--// 별점 -->							
+							<div class="addr">서울특별시 송파구 석촌동</div>							
+							<!-- 리뷰/사장님댓글 -->
+							<div class="shop-info-fav">
+								<span>리뷰 
+									<strong class="text-primary"><a href="#" onclick="alert('리뷰');">22</a></strong>
+								</span>
+								<span>사장님댓글 
+									<strong class="text-primary"><a href="#" onclick="alert('사장님댓글');">23</a></strong>
+								</span>
+							</div>
+							<!--// 리뷰/사장님댓글 -->
+							<!-- 결제방식 -->
+							<div class="shop-info-tag pay">
+								<span class="in-app"><a href="#" onclick="alert('바로결제');">바로결제</a></span> 
+								<span class="offline"><a href="#" onclick="alert('만나서결제');">만나서결제</a></span>
+							</div>
+							<!--// 결제방식 -->
+						</div>
+					</div>
+				</div>
+				<!--// Column -->
+				<!-- Column -->
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="thumbnail shop-list-panel of-h">
+						<!-- 썸네일	이미지 -->
+						<span class="inner-brd"> 
+							<span class="mask"></span> 
+							<img class="lazy" alt="굽네치킨 가락점" data-original="images/shopList/shop004.jpg" src="images/common/white.gif">
+						</span>
+						<!--// 썸네일	이미지 -->
+						<div class="caption">
+							<!-- 업소명 -->
+							<h2 class="text-ellipsis" title="굽네치킨-가락점">굽네치킨-가락점</h2>
+							<!--// 업소명 -->
+							<!-- 별점 -->
+							<span class="rating"> 
+								<span class="img_star star_rate">
+									<span class="img_star inner_star" style="width: 73.60%;">별점</span>
+								</span>
+							</span>
+							<!--// 별점 -->							
+							<div class="addr">서울특별시 송파구 석촌동</div>							
+							<!-- 리뷰/사장님댓글 -->
+							<div class="shop-info-fav">
+								<span>리뷰 
+									<strong class="text-primary"><a href="#" onclick="alert('리뷰');">22</a></strong>
+								</span>
+								<span>사장님댓글 
+									<strong class="text-primary"><a href="#" onclick="alert('사장님댓글');">23</a></strong>
+								</span>
+							</div>
+							<!--// 리뷰/사장님댓글 -->
+							<!-- 결제방식 -->
+							<div class="shop-info-tag pay">
+								<span class="in-app"><a href="#" onclick="alert('바로결제');">바로결제</a></span> 
+								<span class="offline"><a href="#" onclick="alert('만나서결제');">만나서결제</a></span>
+							</div>
+							<!--// 결제방식 -->
+						</div>
+					</div>
+				</div>
+				<!--// Column -->
+				<!-- Column -->
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="thumbnail shop-list-panel of-h">
+						<!-- 썸네일	이미지 -->
+						<span class="inner-brd">
+							<span class="mask"></span>
+							<img class="lazy" alt="BHC 석촌점" data-original="images/shopList/shop005.jpg" src="images/common/white.gif">
+						</span>
+						<!--// 썸네일	이미지 -->
+						<div class="caption">
+							<!-- 업소명 -->
+							<h2 class="text-ellipsis" title="BHC-석촌점">BHC-석촌점</h2>
+							<!--// 업소명 -->
+							<!-- 별점 -->
+							<span class="rating"> 
+								<span class="img_star star_rate">
+									<span class="img_star inner_star" style="width: 73.60%;">별점</span>
+								</span>
+							</span>
+							<!--// 별점 -->							
+							<div class="addr">서울특별시 송파구 석촌동</div>							
+							<!-- 리뷰/사장님댓글 -->
+							<div class="shop-info-fav">
+								<span>리뷰 
+									<strong class="text-primary"><a href="#" onclick="alert('리뷰');">22</a></strong>
+								</span>
+								<span>사장님댓글 
+									<strong class="text-primary"><a href="#" onclick="alert('사장님댓글');">23</a></strong>
+								</span>
+							</div>
+							<!--// 리뷰/사장님댓글 -->
+							<!-- 결제방식 -->
+							<div class="shop-info-tag pay">
+								<span class="in-app"><a href="#" onclick="alert('바로결제');">바로결제</a></span> 
+								<span class="offline"><a href="#" onclick="alert('만나서결제');">만나서결제</a></span>
+							</div>
+							<!--// 결제방식 -->
+						</div>
+					</div>
+				</div>
+				<!--// Column -->
+				<!-- Column -->
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="thumbnail shop-list-panel of-h">
+						<!-- 썸네일	이미지 -->
+						<span class="inner-brd"> 
+							<span class="mask"></span> 
+							<img class="lazy" alt="미쳐버린파닭" data-original="images/shopList/shop006.jpg" src="images/common/white.gif">
+						</span>
+						<!--// 썸네일	이미지 -->
+						<div class="caption">
+							<!-- 업소명 -->
+							<h2 class="text-ellipsis" title="미쳐버린파닭">미쳐버린파닭</h2>
+							<!--// 업소명 -->
+							<!-- 별점 -->
+							<span class="rating"> 
+								<span class="img_star star_rate">
+									<span class="img_star inner_star" style="width: 73.60%;">별점</span>
+								</span>
+							</span>
+							<!--// 별점 -->							
+							<div class="addr">서울특별시 송파구 석촌동</div>							
+							<!-- 리뷰/사장님댓글 -->
+							<div class="shop-info-fav">
+								<span>리뷰 
+									<strong class="text-primary"><a href="#" onclick="alert('리뷰');">22</a></strong>
+								</span>
+								<span>사장님댓글 
+									<strong class="text-primary"><a href="#" onclick="alert('사장님댓글');">23</a></strong>
+								</span>
+							</div>
+							<!--// 리뷰/사장님댓글 -->
+							<!-- 결제방식 -->
+							<div class="shop-info-tag pay">
+								<span class="in-app"><a href="#" onclick="alert('바로결제');">바로결제</a></span> 
+								<span class="offline"><a href="#" onclick="alert('만나서결제');">만나서결제</a></span>
+							</div>
+							<!--// 결제방식 -->
+						</div>
+					</div>
+				</div>
+				<!--// Column -->
+				<!-- Column -->
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="thumbnail shop-list-panel of-h">
+						<!-- 썸네일	이미지 -->
+						<span class="inner-brd"> 
+							<span class="mask"></span> 
+							<img class="lazy" alt="BBQ 석촌점" data-original="images/shopList/shop007.jpg" src="images/common/white.gif">
+						</span>
+						<!--// 썸네일	이미지 -->
+						<div class="caption">
+							<!-- 업소명 -->
+							<h2 class="text-ellipsis" title="BBQ-석촌점">BBQ-석촌점</h2>
+							<!--// 업소명 -->
+							<!-- 별점 -->
+							<span class="rating"> 
+								<span class="img_star star_rate">
+									<span class="img_star inner_star" style="width: 73.60%;">별점</span>
+								</span>
+							</span>
+							<!--// 별점 -->							
+							<div class="addr">서울특별시 송파구 석촌동</div>							
+							<!-- 리뷰/사장님댓글 -->
+							<div class="shop-info-fav">
+								<span>리뷰 
+									<strong class="text-primary"><a href="#" onclick="alert('리뷰');">22</a></strong>
+								</span>
+								<span>사장님댓글 
+									<strong class="text-primary"><a href="#" onclick="alert('사장님댓글');">23</a></strong>
+								</span>
+							</div>
+							<!--// 리뷰/사장님댓글 -->
+							<!-- 결제방식 -->
+							<div class="shop-info-tag pay">
+								<span class="in-app"><a href="#" onclick="alert('바로결제');">바로결제</a></span> 
+								<span class="offline"><a href="#" onclick="alert('만나서결제');">만나서결제</a></span>
+							</div>
+							<!--// 결제방식 -->
+						</div>
+					</div>
+				</div>
+				<!--// Column -->
+				<!-- Column -->
+				<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
+					<div class="thumbnail shop-list-panel of-h">
+						<!-- 썸네일	이미지 -->
+						<span class="inner-brd"> 
+							<span class="mask"></span> 
+							<img class="lazy" alt="네네치킨 석촌점" data-original="images/shopList/shop008.jpg" src="images/common/white.gif">
+						</span>
+						<!--// 썸네일	이미지 -->
+						<div class="caption">
+							<!-- 업소명 -->
+							<h2 class="text-ellipsis" title="네네치킨-석촌점">네네치킨-석촌점</h2>
+							<!--// 업소명 -->
+							<!-- 별점 -->
+							<span class="rating"> 
+								<span class="img_star star_rate">
+									<span class="img_star inner_star" style="width: 73.60%;">별점</span>
+								</span>
+							</span>
+							<!--// 별점 -->							
+							<div class="addr">서울특별시 송파구 석촌동</div>							
+							<!-- 리뷰/사장님댓글 -->
+							<div class="shop-info-fav">
+								<span>리뷰 
+									<strong class="text-primary"><a href="#" onclick="alert('리뷰');">22</a></strong>
+								</span>
+								<span>사장님댓글 
+									<strong class="text-primary"><a href="#" onclick="alert('사장님댓글');">23</a></strong>
+								</span>
+							</div>
+							<!--// 리뷰/사장님댓글 -->
+							<!-- 결제방식 -->
+							<div class="shop-info-tag pay">
+								<span class="in-app"><a href="#" onclick="alert('바로결제');">바로결제</a></span> 
+								<span class="offline"><a href="#" onclick="alert('만나서결제');">만나서결제</a></span>
+							</div>
+							<!--// 결제방식 -->
+						</div>
+					</div>
+				</div>
+				<!--// Column -->
+			</div>
+			<!--// Row -->
+		</section>
+		<!--// Shop List	-->
+	</div>
+	<!--// Container -->
+
+</div>
+<!--// Wrap -->
+
+<!-- Footer -->
+<footer>
+	<section class="foot-area">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<ul class="lnk list-inline xsmall">
+				<li><a href="#"	title="유캔 Do Eat 소개">유캔 Do Eat 소개</a> <em>|</em></li>
+				<li><a href="#"	title="바로결제란">바로결제란</a> <em>|</em></li>
+				<li><a href="#"	title="이용약관">이용약관</a> <em>|</em></li>
+				<li><a href="#"	title="전자금융거래 이용약관">전자금융거래 이용약관</a> <em>|</em></li>
+				<li><a href="#"	title="개인정보처리방침"><strong>개인정보처리방침</strong></a> <em>|</em></li>
+				<li><a href="#"	title="광고신청">광고신청</a> <em>|</em></li>
+				<li><a href="#" title="문의하기">문의하기</a> <em>|</em></li>
+				<li><a href="#" title="회사소개">회사소개</a> <em>|</em></li>
+				<li><a href="#" title="사장님사이트">사장님사이트</a> <em>|</em></li>
+				<li class="blog"><a href="#" title="블로그 바로가기">블로그 바로가기</a> <em>|</em></li>
+				</ul>
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<!-- Company Info -->
+				<div class="woowa-info xsmall text-muted">
+					<div>
+						유캔 Do Eat 콜센터 : 1644-0025 (24시간운영, 연중무휴) 
+						<a href="#" class="mail">메일보내기</a>
+					</div>
+					<div>
+						(주)권임심조 <span>대표 : 조하용</span> <span>사업자번호 : 120-87-65763</span>
+						<a class="bizinfo" target="_blank" href="#">사업자정보확인</a>
+					</div>
+					<div>
+						통신판매업 : 서울 송파 -0515 <span>주소 :
+							<address>서울특별시 송파구 위례성대로 2 장은빌딩 18층</address>
+						</span>
+					</div>
+					<!-- 전자금융거래이용약관 -->
+					<div class="cs-fc">
+						<p>전자금융분쟁처리</p>
+						<span>Tel : 1644-0025</span> <span>Fax : 02-532-5854</span> <span>메일
+							: help@woowahan.com</span>
+					</div>
+					<div class="copyright">copyright Woowa Brothers in Song-pa</div>
+					<!--// 전자금융거래이용약관 -->
+				</div>
+				<!--// Company Info -->
+			</div>
+		</div>
+		<!--// row -->
+		<div class="foot-info xsmall text-muted">
+			유캔 Do Eat은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 
+			따라서 유캔 Do Eat은 상품 거래정보 및 거래에 대해 책임지지 않습니다.
+		</div>
+	</section>
+	<!--// foot-area -->
+
+	<!-- Award Area -->
+	<section class="award-area">
+		<ul id="award" class="award list-inline xsmall">
+		<li><span class="award1">kisa</span><em>대한민국 인터넷 대상<br>국무총리상
+				수상
+		</em></li>
+		<li><span class="award2">kisa</span><em>지식경제부 선정<br>올해의
+				청년기업인
+		</em></li>
+		<li><span class="award3">kisa</span><em>2012 스마트앱어워드<br>생활편의부분
+				대상
+		</em></li>
+		<li><span class="award1">kisa</span><em>2012 한국인터넷진흥원<br>중소벤처
+				유망 LBS 선정
+		</em></li>
+		<li><span class="award4">kisa</span><em>대한민국 스마트 TV 앱<br>이노베이션
+				선정
+		</em></li>
+		</ul>
+		<button type="button" class="nextcrs">다음으로</button>
+	</section>
+	<!--// Award Area -->
+</footer>
+<!--// Footer -->
+</body>
+</html>

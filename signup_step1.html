@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>일반 회원가입</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/common1.css">
+    <link rel="stylesheet" type="text/css" href="css/member.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/oauthmember.common.js"></script>
+	<script src="js/placeholder.min.js"></script>
+	<script type="text/javascript">
+    //--------------------------------------------------------------------------
+    //PURPOSE : 배민 ID 가입 요청 - 일반 이메일 ID
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function signup() {
+        $("#empty-email").css("display", "none");
+        $("#wrong-email").css("display", "none");
+        $("#exists-email").css("display", "none");
+        $("#worng-length-pwd").css("display", "none");
+        $("#not-match-pwd").css("display", "none");
+
+        var email = $("#email").val();
+        var password = $("#pwd").val();
+        var confirmPassword = $("#confirmPwd").val();
+
+        //이메일 validation
+        if(email_validation(email)
+            && pwd_validation(password, confirmPassword)) {
+
+
+            wrapWindowByMask();
+
+         /*   //배민 ID 중복 체크
+            $.ajax({
+                url: "/oauthmember/check_id",
+                type: "POST",
+                async : true,
+                data: {
+                    "emailId" : email
+                },
+                success: function (data) {
+                    var dataRtn = JSON.parse(data);
+                    if(dataRtn != undefined && dataRtn) {
+                        //존재
+                        $("#exists-email").css("display", "block");
+                    } else{
+                        //미존재 - 가입 프로세스 진행 */
+                        document.frm.submit();document.frm.submit();
+               /*    }
+                },
+                complete : function(data) {
+                    closeWindowByMask();
+                },
+                error: function (request,status,error) {
+                    alert("배민 ID조회에 실패하였습니다.\n다시 한번 확인해 주세요.");
+                    result = true;
+                }
+            }); */
+        }
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 이메일 ID 유효성 체크
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function email_validation(email) {
+        var regExp = /^[-./0-9A-Z_a-z]+@[-/0-9A-Z_a-z]+.[-./0-9A-Z_a-z]+$/;
+        if (email.length == 0) {
+            //빈값
+            $("#empty-email").css("display", "block");
+            return false;
+        } else if (!regExp.test(email)) {
+            //이메일 형식이 아님
+            $("#wrong-email").css("display", "block");
+            return false;
+        }
+
+        return true;
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 이메일 ID 유효성 체크
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function pwd_validation(pwd, confirmPwd) {
+
+        if ((pwd.length < 8 || pwd.length > 20)
+            || (confirmPwd.length < 8 || confirmPwd.length > 20)) {
+            //길이 체크
+            $("#worng-length-pwd").css("display", "block");
+            return false;
+        } else if (pwd != confirmPwd) {
+            //비밀번호 불일치
+            $("#not-match-pwd").css("display", "block");
+            return false;
+        }
+
+        return true;
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 이메일 초기화
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function deleteEmail() {
+        $("#email").val('');
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 비밀번호 초기화
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function deletePwd() {
+        $("#pwd").val('');
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 확인 비밀번호 초기화
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function deleteConfirmPwd() {
+        $("#email").val('');
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 배민 ID 존재 여부 체크
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function existsId(email) {
+        var result = false;
+        $.ajax({
+            url: "/oauthmember/check_id",
+            type: "POST",
+            async : false,
+            data: {
+                "emailId" : email
+            },
+            success: function (data) {
+                var dataRtn = JSON.parse(data);
+                if(dataRtn != undefined && dataRtn) {
+                    //존재
+                    result = true;
+                    $("#exists-email").css("display", "block");
+                } else{
+                    //미존재
+                    result = false;
+                }
+            },
+
+            error: function (request,status,error) {
+                alert("배민 ID조회에 실패하였습니다.\n다시 한번 확인해 주세요.");
+                result = true;
+            }
+        });
+
+        return result;
+    }
+
+    
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 입력 필드 확인
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function keyUp(event) {
+        if ($("#email").val().length != 0
+                && $("#pwd").val().length != 0
+                && $("#confirmPwd").val().length != 0) {
+            //다음 버튼 활성화
+            $("#next").removeAttr("disabled");
+            $("#next").removeClass("btn-primary disabled");
+            $("#next").addClass("btn-primary");
+        } else {
+            //다음 버튼 비활성화
+            $("#next").attr("disabled", true);
+            $("#next").removeClass("btn-primary");
+            $("#next").addClass("btn-primary disabled");
+        }
+    }
+
+    function wrapWindowByMask() {
+        //화면의 높이와 너비를 구한다.
+        var maskHeight = $(document).height();
+//      var maskWidth = $(document).width();
+        var maskWidth = window.document.body.clientWidth;
+
+        var mask = "<div id='mask' style='position:absolute; z-index:9000; background-color:#ffffff; display:none; left:0; top:0;'></div>";
+        var loadingImg = '';
+
+        loadingImg += "<div id='loadingImg' style='position:absolute; left:48%; top:48%; display:none; z-index:10000;'>";
+        loadingImg += " <img src='/img/loading_gif.gif'/>";
+        loadingImg += "</div>";
+
+        //화면에 레이어 추가
+        $('body')
+            .append(mask)
+            .append(loadingImg)
+
+        //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+        $('#mask').css({
+            'width' : maskWidth
+            , 'height': maskHeight
+            , 'opacity' : '1.0'
+        });
+
+        //마스크 표시
+        $('#mask').show();
+
+        //로딩중 이미지 표시
+        $('#loadingImg').show();
+    }
+
+    function closeWindowByMask() {
+        $('#mask, #loadingImg').hide();
+        $('#mask, #loadingImg').remove();
+    }
+</script>
+</head>
+<body>
+
+	<div id="wrap" class="registration-wrap">
+		<ul class="registration-step">
+			<li class="current">STEP 1</li>
+			<li>STEP 2</li>
+		</ul>
+		<!-- (s)content -->
+		<div id="content" class="content">
+			<div class="inner-con">
+				<ul class="txt-list">
+					<li>유 캔 Do Eat은 <a href="https://www.baemin.com/oauthmember/info"><span
+							id="info" class="txt-id">Do Eat ID</span></a>로 로그인하실 수 있습니다.
+					</li>
+					<li>Do Eat ID는 이메일가입 가입이 가능합니다.</li>
+					<li>기존 유 캔 Do Eat 앱을 이용하신 회원은 <br>
+					<em>[이미 Do Eat ID가 있으세요?] 버튼</em>을 눌러주세요.
+					</li>
+					<li>사용하고 있는 이메일을 입력해야 <br>아이디/비밀번호 분실 시 찾을 수 있습니다.
+					</li>
+				</ul>
+				<div class="tit-group">
+					<h2 class="title">Do Eat ID 가입하기</h2>
+					<a href="login.html" class="txt-link">이미
+						Do Eat ID가 있으세요?</a>
+				</div>
+				<fieldset>
+					<form name="frm" action="signup_step2.html" method="post">
+						<legend>회원가입</legend>
+						<div class="input-row input-one">
+							<input type="email" maxlength="40" name="email" id="email"
+								placeholder="Do Eat ID(이메일)" onkeyup="keyUp(event)">
+							<button type="button" title="delete" id="" class="icon-input-del"
+								onclick="deleteEmail()">
+								<span class="blind">삭제</span>
+							</button>
+						</div>
+						<p id="empty-email" class="txt-refer" style="display: none;">이메일을
+							입력해주세요.</p>
+						<p id="wrong-email" class="txt-refer" style="display: none;">이메일
+							형식을 확인해 주세요. 이메일은 영문, 숫자, @만 입력 가능합니다.</p>
+						<p id="exists-email" class="txt-refer" style="display: none;">이미
+							존재하는 계정입니다. 다른 계정으로 입력해 주세요.</p>
+
+						<div class="input-group">
+							<div class="input-row">
+								<input type="password" maxlength="20" name="pwd" id="pwd"
+									placeholder="비밀번호 (8~20자)" onkeyup="keyUp(event)">
+								<button type="button" title="delete" id="delete-pwd"
+									class="icon-input-del" onclick="deletePwd()">
+									<span class="blind">삭제</span>
+								</button>
+							</div>
+							<div class="input-row">
+								<input type="password" maxlength="20" name="confirmPwd"
+									id="confirmPwd" placeholder="비밀번호 재입력 (8~20자)"
+									onkeyup="keyUp(event)">
+								<button type="button" title="delete" id="delete-confirmPwd"
+									class="icon-input-del" onclick="deleteConfirmPwd()">
+									<span class="blind">삭제</span>
+								</button>
+							</div>
+						</div>
+						<p id="worng-length-pwd" class="txt-refer" style="display: none;">비밀번호를
+							8~20자로 입력해 주세요.</p>
+						<p id="not-match-pwd" class="txt-refer" style="display: none;">비밀번호가
+							서로 다릅니다. 다시 입력해 주세요.</p>
+						<div class="btn-block">
+							<button id="next" type="button" class="btn-primary disabled"
+								disabled onclick="signup()">다음</button>
+						</div>
+						<!-- 입력필드 다 적었을 경우 disabled 제거 -->
+					</form>
+					<!--<h2 class="title">간편하게 가입하기</h2>
+					<div class="btn-block">
+						<button type="button" class="btn-facebook"
+							onclick="signup_facebook()">페이스북으로 시작하기</button>
+					</div>-->
+				</fieldset>
+			</div>
+		</div>
+		<!-- (e)content -->
+
+	</div>
+
+	
+</body>
+</body>
+
+</html>

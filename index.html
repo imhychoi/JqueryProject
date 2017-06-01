@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>유캔 Do Eat :: 대한민국 1등 배달앱</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<link rel="stylesheet" href="css/common.css" media="screen">
+<link rel="stylesheet" href="css/main.css" media="screen">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<script src="js/respond.proxy.min.js"></script>
+	<script src="js/html5shiv.js"></script>
+	<html class="lt-ie-9">
+	<![endif]-->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/placeholder.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.migrate.min.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/jquery.lazyloadimg.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ui.common.js"></script>
+<script src="js/common.js"></script>
+<script src="js/jquery.masonry.min.js"></script>
+<script src="js/jquery.carouFredSel.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/kakao.link.js"></script>
+<!--[if !IE 8]><!-->
+<script src="js/jquery.backgroundPosition.min.js"></script>
+<!--[endif]-->
+</head>
+<body>
+
+<!-- Wrap -->
+<div id="wrap">
+	<!-- Header -->
+	<header>		
+		<!-- Basic TP Area -->
+		<section class="basic-tp-area">
+			<section class="tp-area">
+
+				<h1>
+					<a href="index.html" class="ir-el">권임심조</a>
+				</h1>
+				<div class="gnb-wrap">
+					<span class="navigation"
+						onclick="toggleLayer('gnb','navigation');return false;">네비게이션</span>
+					<ul class="list-inline gnb">
+					<li><a href="login.html">로그인</a>	<em>|</em></li>
+					<li><a href="signup_step1.html">회원가입</a> <em>|</em></li>
+					<li><a href="faq.html">고객센터</a></li>
+					</ul>
+				</div>				
+
+				<!-- Search Form -->
+				<form class="header-search cate-srch">
+				<fieldset>
+					<legend class="sr-only">검색</legend>
+					<!-- Keyword -->
+					<div class="input-group srch">
+						<input type="text" class="form-control" id="sch_kwd"
+							onkeypress="evtKeyPress(event)" placeholder="업소명을 검색해주세요" 
+							style="ime-mode: inactive" > 
+						<span class="input-group-btn">
+							<button type="button" class="btn" onclick="fn_sch_kwd(); return false;">검색</button>
+						</span>
+					</div>
+					<!--// Keyword -->
+				</fieldset>
+				</form>
+				<!--// Search Form -->
+
+				<!-- Category -->
+				<div class="category-set main">
+					<dl class="dl-horizontal">
+					<dt class="dt-category"
+						onclick="toggleLayer('cate-srch','dt-category');return false;">카테고리
+						:
+					</dt>
+					<dd class="cate-srch">
+						<div class="cate-area">
+							<ul id="category" class="list-inline list-unstyled">
+							<li class="chicken"	><a href="list_shop.html">치킨</a> <em>|</em></li>
+							<li class="chinese"	><a href="list_shop.html">중국집</a> <em>|</em></li>
+							<li class="pizza"	><a href="list_shop.html">피자</a> <em>|</em></li>
+							<li class="korean"	><a href="list_shop.html">한식,분식</a> <em>|</em></li>
+							<li class="jokbal"	><a href="list_shop.html">족발,보쌈</a> <em>|</em></li>
+							<li class="night"	><a href="list_shop.html">야식</a> <em>|</em></li>
+							<li class="japanese"><a href="list_shop.html">돈까스,회,일식</a> <em>|</em></li>
+							<li class="tang"	><a href="list_shop.html">찜,탕</a> <em>|</em></li>
+							<li class="dosirak"	><a href="list_shop.html">도시락</a> <em>|</em></li>
+							<li class="fastfood"><a href="list_shop.html">패스트푸드</a> <em>|</em></li>
+							<li class="baro"	><a href="list_shop.html">바로결제</a> <em>|</em></li>
+							<li class="etc"		><a href="list_shop.html">기타</a> <em>|</em></li>
+							<li class="all"		><a href="list_shop.html">모아보기</a></li>
+							</ul>
+						</div>
+						<div class="cate-control-main">
+							<a href="javascript:;" class="prev4">&lt;</a> 
+							<a href="javascript:;" class="next4">&gt;</a>
+						</div>
+					</dd>
+					</dl>
+				</div>
+				<!--// Category -->
+
+			</section>
+		</section>
+		<!--// Basic TP Area -->
+	</header>
+	<!--// Header -->
+
+	<!-- Container -->
+	<div class="container of-h">
+		<!-- Cont -->
+		<div class="cont">
+			<div class="boxm col1" onclick="location.href='list_shop.html';">
+				<div class="cutter chicken">
+					<div class="cover"></div>
+					<div class="default">치킨</div>
+				</div>
+			</div>
+
+			<div class="boxm col1" onclick="fn_sch_kw('중국집');">
+				<div class="cutter chinese">
+					<div class="cover"></div>
+					<div class="default">중국집</div>
+				</div>
+			</div>
+
+			<div class="boxm col1" onclick="fn_sch_kw('피자');">
+				<div class="cutter pizza">
+					<div class="cover"></div>
+					<div class="default">피자</div>
+				</div>
+			</div>
+
+			<div class="boxm col1" onclick="fn_sch_kw('한식,분식');">
+				<div class="cutter korean">
+					<div class="cover"></div>
+					<div class="default">한식,분식</div>
+				</div>
+			</div>
+
+			<div class="boxm col2">
+				<div class="cutter promo">
+					<div class="default">
+						<ul id="promotion" class="list-inline">
+							<li
+								style="background-image: url(images/main/201412050008_180343.png)"><a
+								href="#">5월
+									배민할인한데이</a></li>
+						</ul>
+						<div class="btn-control">
+							<a href="javascript:;" class="prev prev3">&lt;</a> <a
+								href="javascript:;" class="next next3">&gt;</a>
+						</div>
+						<div id="pager" class="pager"></div>
+					</div>
+				</div>
+			</div>
+			<div class="boxm col1" onclick="fn_sch_kw('족발,보쌈');">
+				<div class="cutter jokbal">
+					<div class="cover"></div>
+					<div class="default">족발,보쌈</div>
+				</div>
+			</div>
+
+			<div class="boxm col1" onclick="fn_sch_kw('야식');">
+				<div class="cutter night">
+					<div class="cover"></div>
+					<div class="default">야식</div>
+				</div>
+			</div>
+
+			<div class="boxm col1" onclick="fn_sch_kw('찜,탕');">
+				<div class="cutter tang">
+					<div class="cover"></div>
+					<div class="default">찜,탕</div>
+				</div>
+			</div>
+
+			<div class="boxm col1" onclick="fn_sch_kw('돈까스,회,일식');">
+				<div class="cutter japanese">
+					<div class="cover"></div>
+					<div class="default">돈까스,회,일식</div>
+				</div>
+			</div>
+
+			<div class="boxm col1" onclick="fn_sch_kw('도시락');">
+				<div class="cutter dosirak">
+					<div class="cover"></div>
+					<div class="default">도시락</div>
+				</div>
+			</div>
+
+			<div class="boxm col1" onclick="fn_sch_kw('패스트푸드');">
+				<div class="cutter fastfood">
+					<div class="cover"></div>
+					<div class="default">패스트푸드</div>
+				</div>
+			</div>
+
+			<div class="boxm col2">
+				<div class="cutter game">
+					<a href="#"><div class="default">게임</div></a>
+				</div>
+			</div>
+
+			<div class="boxm col1">
+				<div class="cutter baro" onclick="fn_sch_kw('바로결제'); return false;">
+					<div class="cover"></div>
+					<div class="default">바로결제</div>
+				</div>
+			</div>
+
+			<div class="boxm col1 masonry-brick">
+				<div class="cutter nothing">
+					<div class="cover"></div>
+					<div class="default">땜빵 - 저스트낫띵</div>
+				</div>
+			</div>
+		</div>
+		<!--// Cont -->
+		<!-- BT Cont -->
+		<div class="bt-cont">
+			<!-- Row -->
+			<div class="row">
+				<!-- Notice -->
+				<div class="col-md-6 col-xs-12 col-sm-12 lf-box">
+					<div class="title-area">
+						<h3 class="notice">공지사항</h3>
+						<a href="#"	class="btn btn-more">더보기</a>
+					</div>
+					<div class="cont-area">
+						<h4>
+							<a href="#" class="text-ellipsis">[공지] 개인정보처리방침 일부 변경에 관한 안내</a>
+						</h4>
+						<p>[공지] 개인정보처리방침 일부 변경에 관한 안내 안녕하세요. ㈜권임심조의 유캔 Do Eat 개인정보....</p>
+						<em class="text-muted">2017-03-30</em>
+					</div>
+				</div>
+				<!--// Notice -->
+				<!-- Introduce -->
+				<div class="col-md-6 col-xs-12 rt-box hidden-xs hidden-sm">
+					<div class="title-area">
+						<h3 class="baedal">유캔 Do Eat 소개</h3>
+						<div class="btn-group">
+							<a href="#" class="btn btn-down">앱다운로드</a> 
+							<a href="#"	class="btn btn-more">더보기</a>
+						</div>
+					</div>
+					<div class="cont-area">
+						<div class="media"></div>
+						<!--/.media -->
+					</div>
+				</div>
+				<!--// Introduce -->
+			</div>
+			<!--// Row -->
+			<!-- Row -->
+			<div class="row">
+				<!-- 우아한 나눔 캠페인 -->
+				<div class="col-md-6 col-xs-12 lf-box hidden-xs hidden-sm">
+					<div class="title-area">
+						<h3 class="woowa">우아한 나눔 캠페인</h3>
+						<div class="btn-group">
+							<a href="javascript:;" class="btn btn-view lf prev1">&lt;</a> <a
+								href="javascript:;" class="btn btn-view rt next1">&gt;</a>
+						</div>
+					</div>
+					<div class="cont-area">
+						<ul id="woowacamp" class="list-inline">
+						<li>
+							<a href="#"> 
+								<span class="txt woowa1">365일 우유로 안부를 물어요! 유캔 Do Eat이 함께하는 나눔문화 혼자 사시는 노인분들께 우유를 배달해 드려요!</span> 
+								<span class="img"><img src="images/temp/bnr-img-woowa01.gif" alt=""></span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="txt woowa2">우와!~한 무료글꼴, 유캔 Do Eat 한나체,주아체 유캔 Do Eat의 아이덴티티를 담은 한나체,주아체는 
+								모두에게 무료로 제공되는서체입니다.</span> 
+								<span class="img"><img src="images/temp/bnr-img-woowa02-v2.gif" alt=""></span>
+							</a>
+						</li>
+						<li>
+							<a href="#"> 
+								<span class="txt woowa3">'풋~아~'이런 브랜드 제품, 즐겁지 아니한가! 유캔 Do Eat스러운 브랜드 제품들! 10x10에서 만나볼 수 있어요.</span> 
+								<span class="img"><img src="images/temp/bnr-img-woowa03.gif" alt=""></span>
+							</a>
+						</li>
+						</ul>
+					</div>
+				</div>
+				<!--// 우아한 나눔 캠페인 -->
+				<!-- 바로결제 팁 -->
+				<div class="col-md-6 col-xs-12 rt-box hidden-xs hidden-sm">
+					<div class="title-area">
+						<h3 class="barotip">바로결제 팁</h3>
+						<div class="btn-group">
+							<a href="javascript:;" class="btn btn-view lf prev2">&lt;</a> <a
+								href="javascript:;" class="btn btn-view rt next2">&gt;</a>
+						</div>
+					</div>
+					<div class="cont-area">
+						<ul id="btip" class="list-inline">
+						<li><a href="javascript:fn_barotip_det('1');"> <span
+								class="txt baro1">다양한 결제 수단을 사용할 수 있어요.</span> <span
+								class="img"><img
+									src="images/temp/bnr-img-baro01.gif"
+									alt=""></span>
+						</a></li>
+						<li><a href="javascript:fn_barotip_det('2');"> <span
+								class="txt baro2">포인트 모아 먹고 싶은 것 시켜 먹어요.</span> <span
+								class="img"><img
+									src="images/temp/bnr-img-baro02.gif"
+									alt=""></span>
+						</a></li>
+						<li><a href="javascript:fn_barotip_det('3');"> <span
+								class="txt baro3">한번 주문한 주소를 기억하고 있어요.</span> <span
+								class="img"><img
+									src="images/temp/bnr-img-baro03.gif"
+									alt=""></span>
+						</a></li>
+						</ul>
+					</div>
+				</div>
+				<!--// 바로결제 팁 -->
+			</div>
+			<!--// Row -->
+		</div>
+		<!--// BT Cont -->
+	</div>
+	<!--// Container -->
+
+
+	<script type="text/javascript">
+		//------------------------------------------------------------------------------
+		//PURPOSE : 메인하단 스크립트
+		//CREATE  : 날짜 담당자
+		//------------------------------------------------------------------------------
+		var $container = $('.cont');
+		$container.imagesLoaded(function() {
+			$container.masonry({
+				itemSelector : '.boxm',
+				isAnimated : true,
+				isFitWidth : true
+			});
+		});
+
+		// main carousel
+		$('#woowacamp').carouFredSel({
+			responsive : true,
+			width : '100%',
+			auto : false,
+			prev : '.prev1',
+			next : '.next1'
+		});
+		$('#btip').carouFredSel({
+			responsive : true,
+			width : '100%',
+			auto : false,
+			prev : '.prev2',
+			next : '.next2'
+		});
+		$('#promotion').carouFredSel({
+			pagination : "#pager",
+			prev : '.prev3',
+			next : '.next3',
+			auto : false,
+			scroll : {
+				fx : "fade",
+				duration : 100
+			}
+		});
+	</script>
+</div>
+<!--// Wrap -->
+
+<!-- Footer -->
+<footer>
+	<section class="foot-area">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<ul class="lnk list-inline xsmall">
+				<li><a href="#"	title="유캔 Do Eat 소개">유캔 Do Eat 소개</a> <em>|</em></li>
+				<li><a href="#"	title="바로결제란">바로결제란</a> <em>|</em></li>
+				<li><a href="#"	title="이용약관">이용약관</a> <em>|</em></li>
+				<li><a href="#"	title="전자금융거래 이용약관">전자금융거래 이용약관</a> <em>|</em></li>
+				<li><a href="#"	title="개인정보처리방침"><strong>개인정보처리방침</strong></a> <em>|</em></li>
+				<li><a href="#"	title="광고신청">광고신청</a> <em>|</em></li>
+				<li><a href="#" title="문의하기">문의하기</a> <em>|</em></li>
+				<li><a href="#" title="회사소개">회사소개</a> <em>|</em></li>
+				<li><a href="#" title="사장님사이트">사장님사이트</a> <em>|</em></li>
+				<li class="blog"><a href="#" title="블로그 바로가기">블로그 바로가기</a> <em>|</em></li>
+				</ul>
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<!-- Company Info -->
+				<div class="woowa-info xsmall text-muted">
+					<div>
+						유캔 Do Eat 콜센터 : 1644-0025 (24시간운영, 연중무휴) 
+						<a href="#" class="mail">메일보내기</a>
+					</div>
+					<div>
+						(주)권임심조 <span>대표 : 조하용</span> <span>사업자번호 : 120-87-65763</span>
+						<a class="bizinfo" target="_blank" href="#">사업자정보확인</a>
+					</div>
+					<div>
+						통신판매업 : 서울 송파 -0515 <span>주소 :
+							<address>서울특별시 송파구 위례성대로 2 장은빌딩 18층</address>
+						</span>
+					</div>
+					<!-- 전자금융거래이용약관 -->
+					<div class="cs-fc">
+						<p>전자금융분쟁처리</p>
+						<span>Tel : 1644-0025</span> <span>Fax : 02-532-5854</span> <span>메일
+							: help@woowahan.com</span>
+					</div>
+					<div class="copyright">copyright Woowa Brothers in Song-pa</div>
+					<!--// 전자금융거래이용약관 -->
+				</div>
+				<!--// Company Info -->
+			</div>
+		</div>
+		<!--// row -->
+		<div class="foot-info xsmall text-muted">
+			유캔 Do Eat은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 
+			따라서 유캔 Do Eat은 상품 거래정보 및 거래에 대해 책임지지 않습니다.
+		</div>
+	</section>
+	<!--// foot-area -->
+
+	<!-- Award Area -->
+	<section class="award-area">
+		<ul id="award" class="award list-inline xsmall">
+		<li><span class="award1">kisa</span><em>대한민국 인터넷 대상<br>국무총리상
+				수상
+		</em></li>
+		<li><span class="award2">kisa</span><em>지식경제부 선정<br>올해의
+				청년기업인
+		</em></li>
+		<li><span class="award3">kisa</span><em>2012 스마트앱어워드<br>생활편의부분
+				대상
+		</em></li>
+		<li><span class="award1">kisa</span><em>2012 한국인터넷진흥원<br>중소벤처
+				유망 LBS 선정
+		</em></li>
+		<li><span class="award4">kisa</span><em>대한민국 스마트 TV 앱<br>이노베이션
+				선정
+		</em></li>
+		</ul>
+		<button type="button" class="nextcrs">다음으로</button>
+	</section>
+	<!--// Award Area -->
+</footer>
+<!--// Footer -->
+
+</body>
+</html>

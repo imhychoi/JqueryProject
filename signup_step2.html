@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>추가 정보 입력</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="autocomplete" content="off">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/favicon.png?v=20151106">
+    <link rel="stylesheet" type="text/css" href="css/common1.css">
+    <link rel="stylesheet" type="text/css" href="css/member.css">
+    <!--[if lt IE 10]>
+    <link rel="stylesheet" type="text/css" href="https://pop.baemin.com/webui/bm_auth/pc/css/ie_low.css">
+    <![endif]-->
+
+	<script src="js/jquery.js"></script>
+<script src="js/oauthmember.common.js"></script>
+<script src="js/placeholder.min.js"></script>
+<script type="text/javascript">
+    //이메일 초기화
+    function deleteEmail() {
+        $("#email").val("");
+    }
+
+    //생년월일 초기화
+    function deleteBirth() {
+        $("#birth").val("");
+    }
+    //회원 가입
+    function signup() {
+        $("#empty-email").css("display", "none");
+        $("#wrong-email").css("display", "none");
+        $("#empty-birth").css("display", "none");
+        $("#wrong-birth").css("display", "none");
+        $("#under-birth").css("display", "none");
+        $("#term-chk1-notcheck").css("display", "none");
+        $("#term-chk2-notcheck").css("display", "none");
+        $("#term-chk3-notcheck").css("display", "none");
+		$("#not-cert").css("display", "none");
+
+        if ($("#snskey").val() != '' || $("#snskey").val().length != 0) {
+            var email = $("#email").val();
+        } else {
+            var email = $("#id").val();
+        }
+
+        if ($("#mobile1").val() == '') {
+            $("#not-cert").css("display", "block");
+            return;
+        }
+
+		if ($("#mobile2").val() == '') {
+            $("#not-cert").css("display", "block");
+            return;
+        }
+
+		if ($("#mobile3").val() == '') {
+            $("#not-cert").css("display", "block");
+            return;
+        }
+        
+        var agreeCd = "";
+        var isAgree = true;
+
+        if($("#birth").val() == '') {
+            $("#empty-birth").css("display", "block");
+
+            return;
+        }
+
+        if($("#birth").val().length < 8) {
+            $("#wrong-birth").css("display", "block");
+            return;
+        }
+
+		if(!$("#term-chk1_label").hasClass("on")){
+            $("#term-chk1-notcheck").css("display", "block");
+            isAgree = false;
+        } else {
+            agreeCd += "3";
+        }
+
+        if(!$("#term-chk2_label").hasClass("on")){
+            $("#term-chk2-notcheck").css("display", "block");
+            isAgree = false;
+        } else {
+            agreeCd += ",8";
+        }
+
+        if(!$("#term-chk3_label").hasClass("on")){
+            $("#term-chk3-notcheck").css("display", "block");
+            isAgree = false;
+        } else {
+            agreeCd += ",2";
+        }
+
+        if($("#term-chk4_label").hasClass("on")) {
+            agreeCd += ",9";
+        }
+
+        if($("#term-chk5_label").hasClass("on")) {
+            agreeCd += ",10,11";
+        }
+
+        if(!isAgree) {
+            return;
+        }
+
+		window.location.href = "index.html";
+	}
+
+    //이메일 ID 유효성 체크
+    function email_validation(email) {
+        if ($("#snskey").val() != '' || $("#snskey").val().length != 0) {
+            var regExp = /^[-./0-9A-Z_a-z]+@[-/0-9A-Z_a-z]+.[-./0-9A-Z_a-z]+$/;
+
+            if (email.length == 0) {
+                //빈값
+                $("#empty-email").css("display", "block");
+                return false;
+            } else if (!regExp.test(email)) {
+                //이메일 형식이 아님
+                $("#wrong-email").css("display", "block");
+                return false;
+            }
+        }
+
+        return true;
+
+    }
+
+    //약관 팝업 노출
+    function openTerm(termUrl) {
+        window.open(termUrl, '_blank', 'width=600,height=700,scrollbars=yes');
+    }
+
+	//취소
+    function cancel() {
+        window.location.href = 'index.html';
+    }
+
+    //로그인 페이지로 이동
+    function goLogin() {
+        window.location.href = 'login.html';
+    }
+
+    function digit_check(evt){
+        var code = evt.which?evt.which:event.keyCode;
+        if(code < 48 || code > 57){
+            return false;
+        }
+    }
+</script>
+</head>
+<body>
+
+<div id="wrap" class="registration-addinfo-wrap phone-wrap">
+    <ul class="registration-step">
+        <li>STEP 1</li>
+        <li class="current">STEP 2</li>
+    </ul>
+    <!-- (s)content -->
+    <div id="content" class="content">
+        <div class="inner-con">
+            <p class="txt">아래 정보를 추가 입력해야 회원가입이 완료됩니다.</p>
+            <fieldset>
+                <input type="hidden" id="id" value="dltbfls1@naver.com"/>
+                <input type="hidden" id="pwd" value="rmsgud86"/>
+                <input type="hidden" id="snskey" value=""/>
+                <input type="hidden" id="snscd" value=""/>
+                <legend>추가 정보 입력</legend>
+
+                
+                <h2 class="title">휴대폰 번호 입력<span class="desc">배달 시 정확한 주문정보가 필요합니다.(필수)</span></h2>
+                <div class="mobile-check">
+                    <div class="input-row"><input type="tel" maxlength="3" name="mobile1" id="mobile1"></div>
+                    <div class="input-row"><input type="tel" maxlength="4" name="mobile2" id="mobile2"></div>
+                    <div class="input-row"><input type="tel" maxlength="4" name="mobile3" id="mobile3"></div>
+                </div>
+                <p id="not-mobile" class="txt-refer" style="display: none;">휴대폰 번호를 확인해주세요.</p>
+                <p id="not-cert" class="txt-refer" style="display: none;">휴대폰 번호를 입력해주세요.</p>
+                
+				<h2 class="title">생년월일<span class="desc">회원가입은 만 14세 이상 고객만 가능합니다.</span></h2>
+                <div class="input-row input-one">
+                    <label for="">생년월일</label>
+                    <input type="tel" maxlength="8" name="birth" id="birth" placeholder="예:19870321" onkeypress="return digit_check(event)">
+                    <button type="button" title="delete" id="delete-birth" class="icon-input-del" onclick="deleteBirth()"><span class="blind">삭제</span></button>
+                </div>
+                <p id="empty-birth" class="txt-refer" style="display: none;">생년월일을 입력해주세요.</p>
+                <p id="wrong-birth" class="txt-refer" style="display: none;">생년월일을 8자리로 입력해 주세요.</p>
+                <p id="under-birth" class="txt-refer" style="display: none;">만 14세 미만은 회원가입이 제한됩니다.</p>
+                <button class="btn-refer">주의사항 안내</button>
+                <ul class="list-refer">
+                    <li>1. 배달의민족 서비스는 만 14세 미만의 아동의 회원가입을 제한하고 있습니다. </li>
+                    <li>2. 정보통신망 이용촉진 및 정보보호 등에 관한 법률에는 만 14세미만 아동의 개인정보 수집 시 법정대리의 동의를 받도록 규정하고 있으며, 생년월일을 허위로 기재하여 법정대리인의 동의없이 회원가입을 하는 경우 회원탈퇴 또는 서비스 이용이 제한 될 수 있음을 안내해 드립니다.</li>
+                </ul>
+                <h2 class="title">성별<span class="bracket">(선택)</span><span class="desc">선택하시면 더 많은 혜택을 받아보실 수 있습니다.</span></h2>
+                <ul class="sex-list">
+                    <li class="rad-area"><input type="radio" name="sex" id="man"><label for="man">남성</label></li>
+                    <li class="rad-area"><input type="radio" name="sex" id="woman"><label for="woman">여성</label></li>
+                    <li class="rad-area nth3 on"><input type="radio" name="sex" id="none" checked><label for="none">선택 안 함</label></li>
+                </ul>
+                <h2 class="title">약관 동의</h2>
+                <div class="all-cehck">
+            <span class="chk-area">
+              <input type="checkbox" id="term-all">
+              <label for="term-all">아래 약관에 모두 동의합니다.</label>
+            </span>
+                </div>
+                <ul class="term-list">
+                    <li>
+              <span class="chk-area">
+                <input type="checkbox" id="term-chk1">
+                <label for="term-chk1" id="term-chk1_label"><a href="javascript:openTerm('https://wv1.baemin.com/info/policy/use/index.html');">이용약관 동의</a> (필수)</label>
+              </span>
+                        <p id="term-chk1-notcheck" class="txt-refer" style="display: none;">이용약관에 동의해 주세요.</p>
+                    </li>
+                    <li>
+              <span class="chk-area">
+                <input type="checkbox" id="term-chk2">
+                <label for="term-chk2" id="term-chk2_label"><a href="javascript:openTerm('https://wv1.baemin.com/info/terms/eft/index.html');">전자금융거래 이용약관 동의</a> (필수)</label>
+              </span>
+                        <p id="term-chk2-notcheck" class="txt-refer" style="display: none;">전자금융거래 이용약관에 동의해 주세요.</p>
+                    </li>
+                    <li>
+              <span class="chk-area">
+                <input type="checkbox" id="term-chk3">
+                <label for="term-chk3" id="term-chk3_label"><a href="javascript:openTerm('https://wv1.baemin.com/info/policy/indv_gather/join/index.html');">개인정보 수집이용 동의</a> (필수)</label>
+              </span>
+                        <p id="term-chk3-notcheck" class="txt-refer" style="display: none;">개인정보 수집이용에 동의해 주세요. </p>
+                    </li>
+                    <li>
+              <span class="chk-area">
+                <input type="checkbox" id="term-chk4">
+                <label for="term-chk4" id="term-chk4_label"><a href="javascript:openTerm('https://wv1.baemin.com/info/policy/thirdparty/join/index.html');">개인정보 제 3자 제공 동의</a> (선택)</label>
+              </span>
+                        <p class="txt">배달의민족 제휴사에 마케팅정보를 제공합니다.</p>
+                    </li>
+                    <li>
+              <span class="chk-area">
+                <input type="checkbox" id="term-chk5">
+                <label for="term-chk5" id="term-chk5_label"><span>마케팅 정보 메일, SMS 수신</span> (선택)</label>
+              </span>
+                        <p class="txt">수신동의 여부 및 자세한 설정은 환경설정에서 확인할 수 있습니다.</p>
+                    </li>
+                </ul>
+                <div class="btn-group">
+                    <button type="button" class="btn-cancel" onclick="cancel()">취소</button>
+                    <button type="button" class="btn-primary" onclick="signup()">완료</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    
+</div>
+
+</body>
+</html>
+

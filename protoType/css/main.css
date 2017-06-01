@@ -1,0 +1,1333 @@
+.go-app .close, .ir {
+	text-indent: -9999px
+}
+
+.boxm, .cutter.promo .default li a {
+	cursor: pointer;
+	display: inline-block
+}
+
+.toggle-area {
+	background-color: #f4f2ee;
+	background-image: url(../images/common/ln-dotted.png);
+	background-repeat: repeat-x;
+	background-position: top left
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding: 0;
+	text-align: left
+}
+
+.go-app .btn, .go-app .exit, .go-app p, .pager, body {
+	text-align: center
+}
+
+body {
+	background: 0 0;
+	margin: 0 auto
+}
+
+.ir {
+	background-image: url(../images/info/info.jpg);
+	background-repeat: no-repeat;
+	background-size: 375px 500px;
+	-webkit-background-size: 375px 500px
+}
+
+.go-app {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, .7);
+	z-index: 1000
+}
+
+.go-app .close, .go-app .close:hover {
+	background-color: transparent
+}
+
+.go-app div img {
+	width: 190px
+}
+
+.go-app div.abs {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 60.5%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%)
+}
+
+.go-app h1 {
+	width: 246px;
+	height: 231.5px;
+	margin: 0 auto;
+	background-position: 0 0
+}
+
+.go-app .close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 30px;
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	background-image:
+		url(../images/common/btn-bm-app-close02.png);
+	background-repeat: no-repeat;
+	background-size: 26.5px 27.5px;
+	-webkit-background-size: 26.5px 27.5px;
+	opacity: 1;
+	border: none;
+	z-index: 100
+}
+
+.go-app strong {
+	display: block;
+	width: 246px;
+	height: 53px;
+	margin: 10px auto 15px;
+	background-position: 0 -256.5px
+}
+
+.go-app p {
+	display: block;
+	margin: 0 auto;
+	background-position: -29px -324px;
+	color: #645f5a
+}
+
+.go-app .btn {
+	width: 100%;
+	margin: -30px auto 30px;
+	padding: 17px 10px;
+	background-color: #2ac1bc;
+	border: none;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700
+}
+
+.go-app .btn:active, .go-app .btn:hover {
+	background-color: #269c98;
+	border: none;
+	color: #fff
+}
+
+.go-app .exit {
+	display: block;
+	width: 100%;
+	color: rgba(255, 255, 255, .8);
+	text-decoration: underline;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-size: 13px;
+	background: 0 0
+}
+
+.go-app .exit:active, .go-app .exit:hover {
+	color: rgba(255, 255, 255, .4)
+}
+
+.go-app.baemin-sale {
+	padding-top: 33px;
+	background-color: #fff
+}
+
+.go-app.baemin-sale img {
+	max-width: 320px;
+	width: 100%
+}
+
+.go-app.baemin-sale .btn {
+	position: relative;
+	display: block;
+	width: 100%;
+	min-width: 290px;
+	max-width: 320px;
+	padding: 18px 10px;
+	margin-top: -55px;
+	z-index: 10
+}
+
+.tp-area {
+	height: auto !important
+}
+
+.container {
+	margin-top: 20px
+}
+
+@media ( min-width :768px) {
+	.category-set.main {
+		width: 63%;
+		margin-top: 75px;
+		background-color: #fff;
+		font-size: 85%
+	}
+	.category-set.main dl dt {
+		display: block;
+		position: inherit;
+		width: 65px;
+		height: 15px;
+		background: 0 0;
+		text-align: left;
+		text-indent: 0
+	}
+	.category-set.main dl dd {
+		display: block;
+		position: relative;
+		width: auto;
+		margin-left: 75px;
+		background-color: transparent !important;
+		text-align: left
+	}
+	.category-set.main dl dd .cate-area {
+		width: 100%
+	}
+	.category-set.main dl dd ul {
+		width: 100%;
+		height: 40px;
+		margin: 0;
+		padding: 0
+	}
+	.category-set.main dl dd ul li {
+		width: auto !important;
+		height: 22px;
+		margin: 0;
+		background: 0 0;
+		border: none;
+		text-align: left;
+		color: #5e5e5e;
+		text-indent: 0
+	}
+	.category-set.main dl dd ul li em {
+		display: inline-block;
+		padding: 0 2px;
+		color: #e3e3e3
+	}
+	.category-set.main dl dd ul li:hover {
+		background-color: transparent;
+		color: #ff4200
+	}
+	.category-set.main dl dd .cate-control-main {
+		display: none;
+		position: absolute;
+		overflow: hidden;
+		top: 0;
+		right: 5px;
+		width: 28px;
+		height: 14px;
+		background-image:
+			url(../images/main/btn-category-control.gif);
+		background-repeat: no-repeat;
+		background-position: 0 0
+	}
+	.category-set.main dl dd .cate-control-main a {
+		display: inline-block;
+		float: left;
+		width: 14px;
+		text-indent: -9999px
+	}
+}
+
+@media ( min-width :767px) and (max-width:981px) {
+	.category-set.main {
+		width: 550px
+	}
+	.category-set.main .cate-area {
+		width: 97%
+	}
+}
+
+.cont {
+	margin: 0 auto 42px
+}
+
+@media ( min-width :767px) {
+	.cont {
+		margin: 0 auto 70px
+	}
+}
+
+.bt-cont {
+	text-align: left;
+	font-size: 85%;
+	margin: 0 auto;
+	padding: 0 5px 30px
+}
+
+@media ( min-width :767px) {
+	.bt-cont .lf-box {
+		padding: 0 25px 35px 15px
+	}
+	.bt-cont .rt-box {
+		padding: 0 15px 35px 25px
+	}
+}
+
+.bt-cont .title-area {
+	overflow: hidden;
+	margin: 0 0 10px;
+	padding: 0 0 5px;
+	border-bottom: 2px solid #151515
+}
+
+@media ( min-width :768px) {
+	.bt-cont .title-area {
+		margin: 0 0 20px;
+		padding: 0 0 10px;
+		border-bottom: 4px solid #151515
+	}
+}
+
+.bt-cont .title-area h3 {
+	float: left;
+	margin-top: 7px;
+	font-size: 140%;
+	letter-spacing: 0
+}
+
+.bt-cont .title-area .btn {
+	display: inline-block;
+	padding: 5px 8px 3px;
+	border-top: 1px solid #cfcece;
+	border-right: 1px solid #cfcece;
+	border-bottom: 1px solid #b0b0b0;
+	border-left: 1px solid #cfcece;
+	font-size: 12px;
+	color: #838383;
+	letter-spacing: -.1em;
+	text-decoration: none
+}
+
+@media ( min-width :768px) {
+	.bt-cont .title-area h3 {
+		height: 14px;
+		margin-top: 6px;
+		background-image: url(../images/title/tl-labels.png);
+		background-repeat: no-repeat;
+		text-indent: -9999px
+	}
+	.bt-cont .title-area h3.notice {
+		width: 50px;
+		background-position: -300px -300px
+	}
+	.bt-cont .title-area h3.baedal {
+		width: 87px;
+		background-position: -200px -350px
+	}
+	.bt-cont .title-area h3.woowa {
+		width: 102px;
+		background-position: 0 -400px
+	}
+	.bt-cont .title-area h3.barotip {
+		width: 62px;
+		background-position: -300px -350px
+	}
+	.bt-cont .title-area .btn {
+		padding: 7px 10px 4px;
+		font-size: 11px
+	}
+}
+
+.bt-cont .title-area .btn:hover {
+	border: 1px solid #999;
+	color: #000
+}
+
+.bt-cont .title-area .btn-group, .bt-cont .title-area .btn-more {
+	float: right
+}
+
+.bt-cont .title-area .btn-down {
+	margin-right: 6px;
+	background-color: #393939;
+	border-top: 1px solid #393939;
+	border-right: 1px solid #3d3d3d;
+	border-bottom: 1px solid #292929;
+	border-left: 1px solid #393939;
+	color: #fff
+}
+
+.bt-cont .title-area .btn-down:hover {
+	background-color: #ff4200;
+	border: 1px solid #ff4200;
+	color: #fff
+}
+
+.bt-cont .title-area .btn-view {
+	width: 26px;
+	background-image: url(../images/title/tl-buttons.png);
+	background-repeat: no-repeat;
+	background-position: -300px -650px;
+	text-indent: -9999px
+}
+
+.bt-cont .title-area .btn-view.rt {
+	background-position: 0 -700px
+}
+
+.bt-cont .cont-area {
+	position: relative;
+	color: #8a8b8f
+}
+
+.bt-cont .cont-area h4 {
+	overflow: hidden;
+	padding-bottom: 5px;
+	font-size: 105%;
+	color: #000
+}
+
+.bt-cont .cont-area h4 a, .bt-cont .cont-area h4 a:hover {
+	width: 100%;
+	color: #000;
+	text-decoration: none;
+	line-height: 120%
+}
+
+.bt-cont .cont-area p {
+	padding-bottom: 5px;
+	line-height: 140%
+}
+
+@media ( min-width :768px) {
+	.bt-cont .cont-area ul li a, .bt-cont .cont-area ul li a span {
+		display: inline-block;
+		height: 114px
+	}
+	.bt-cont .cont-area h4 {
+		line-height: 140%
+	}
+	.bt-cont .cont-area h4 a, .bt-cont .cont-area h4 a:hover {
+		width: 85%
+	}
+	.bt-cont .cont-area .media .pull-left {
+		margin-right: 20px
+	}
+	.bt-cont .cont-area p {
+		padding-bottom: 0;
+		line-height: 150%;
+		font-size: 11px
+	}
+	.bt-cont .cont-area em {
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding-top: 0;
+		font-size: 11px
+	}
+	.bt-cont .cont-area .caroufredsel_wrapper {
+		min-height: 114px
+	}
+	.bt-cont .cont-area ul li {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		vertical-align: top
+	}
+	.bt-cont .cont-area ul li a {
+		overflow: hidden;
+		width: 100%;
+		border: 1px solid #e6e6e6
+	}
+	.bt-cont .cont-area ul li a span.txt {
+		float: left;
+		width: 70%;
+		background-repeat: no-repeat;
+		background-position: 10px center;
+		text-indent: -9999px
+	}
+	.bt-cont .cont-area ul li a span.woowa1 {
+		background-image:
+			url(../images/temp/bnr-txt-woowa01.gif)
+	}
+	.bt-cont .cont-area ul li a span.woowa2 {
+		background-image:
+			url(../images/temp/bnr-txt-woowa02-v2.gif)
+	}
+	.bt-cont .cont-area ul li a span.woowa3 {
+		background-image:
+			url(../images/temp/bnr-txt-woowa03.gif)
+	}
+	.bt-cont .cont-area ul li a span.baro1 {
+		background-image:
+			url(../images/temp/bnr-txt-baro01.gif)
+	}
+	.bt-cont .cont-area ul li a span.baro2 {
+		background-image:
+			url(../images/temp/bnr-txt-baro02.gif)
+	}
+	.bt-cont .cont-area ul li a span.baro3 {
+		background-image:
+			url(../images/temp/bnr-txt-baro03.gif)
+	}
+	.bt-cont .cont-area ul li a span.img {
+		position: relative;
+		float: right;
+		width: 30%;
+		text-align: center
+	}
+	.bt-cont .cont-area ul li a span.img img {
+		position: absolute;
+		right: 10px;
+		bottom: 2px;
+		max-width: 95%
+	}
+}
+
+@media ( min-width :480px) {
+	.bt-cont {
+		max-width: 740px
+	}
+}
+
+@media ( min-width :768px) {
+	.bt-cont {
+		max-width: 960px
+	}
+}
+
+@media ( min-width :982px) {
+	.bt-cont {
+		max-width: 980px
+	}
+}
+
+.boxm {
+	position: relative;
+	padding: 20px;
+	font-size: 11px;
+	line-height: 1.4em
+}
+
+.boxm.col1 {
+	width: 240px
+}
+
+.boxm.col2 {
+	width: 480px
+}
+
+.boxm.col2 .default {
+	overflow: hidden;
+	width: 440px;
+	height: 440px;
+	background-size: 100% 100%;
+	-webkit-background-size: 100% 100%;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+}
+
+.cutter {
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+	text-indent: -9999px
+}
+
+.cutter .cover, .cutter .default {
+	width: 200px;
+	height: 200px;
+	background-repeat: no-repeat
+}
+
+.cutter .caroufredsel_wrapper {
+	margin: 0 !important
+}
+
+.cutter .cover {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	background-position: -200px 0;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	z-index: 20
+}
+
+.cutter .default {
+	position: relative;
+	background-position: center center
+}
+
+.cutter .btn-control a, .pager {
+	position: absolute;
+	z-index: 200
+}
+
+.cutter.chicken .cover {
+	background-image: url(../images/main/cate01-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.chicken .cover {
+		background-image: url(../images/main/cate01-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.chicken .default {
+		background-image: url(../images/main/cate01.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.chicken .default {
+	background-image: url(../images/main/cate01.png)
+}
+
+.cutter.chinese .cover {
+	background-image: url(../images/main/cate02-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.chinese .cover {
+		background-image: url(../images/main/cate02-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.chinese .default {
+		background-image: url(../images/main/cate02.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.chinese .default {
+	background-image: url(../images/main/cate02.png)
+}
+
+.cutter.pizza .cover {
+	background-image: url(../images/main/cate03-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.pizza .cover {
+		background-image: url(../images/main/cate03-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.pizza .default {
+		background-image: url(../images/main/cate03.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.pizza .default {
+	background-image: url(../images/main/cate03.png)
+}
+
+.cutter.korean .cover {
+	background-image: url(../images/main/cate04-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.korean .cover {
+		background-image: url(../images/main/cate04-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.korean .default {
+		background-image: url(../images/main/cate04.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.korean .default {
+	background-image: url(../images/main/cate04.png)
+}
+
+.cutter.jokbal .cover {
+	background-image: url(../images/main/cate05-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.jokbal .cover {
+		background-image: url(../images/main/cate05-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.jokbal .default {
+		background-image: url(../images/main/cate05.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.jokbal .default {
+	background-image: url(../images/main/cate05.png)
+}
+
+.cutter.night .cover {
+	background-image: url(../images/main/cate06-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.night .cover {
+		background-image: url(../images/main/cate06-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.night .default {
+		background-image: url(../images/main/cate06.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.night .default {
+	background-image: url(../images/main/cate06.png)
+}
+
+.cutter.tang .cover {
+	background-image: url(../images/main/cate07-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.tang .cover {
+		background-image: url(../images/main/cate07-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.tang .default {
+		background-image: url(../images/main/cate07.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.tang .default {
+	background-image: url(../images/main/cate07.png)
+}
+
+.cutter.japanese .cover {
+	background-image: url(../images/main/cate08-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.japanese .cover {
+		background-image: url(../images/main/cate08-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.japanese .default {
+		background-image: url(../images/main/cate08.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.japanese .default {
+	background-image: url(../images/main/cate08.png)
+}
+
+.cutter.dosirak .cover {
+	background-image: url(../images/main/cate09-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.dosirak .cover {
+		background-image: url(../images/main/cate09-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.dosirak .default {
+		background-image: url(../images/main/cate09.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.dosirak .default {
+	background-image: url(../images/main/cate09.png)
+}
+
+.cutter.fastfood .cover {
+	background-image: url(../images/main/cate10-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.fastfood .cover {
+		background-image: url(../images/main/cate10-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.fastfood .default {
+		background-image: url(../images/main/cate10.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.fastfood .default {
+	background-image: url(../images/main/cate10.png)
+}
+
+.cutter.theme1 .cover {
+	background-image: url(../images/main/cate11-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.theme1 .cover {
+		background-image: url(../images/main/cate11-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.theme1 .default {
+		background-image: url(../images/main/cate11.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.theme1 .default {
+	background-image: url(../images/main/cate11.png)
+}
+
+.cutter.theme2 .cover {
+	background-image: url(../images/main/cate12-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.theme2 .cover {
+		background-image: url(../images/main/cate12-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.theme2 .default {
+		background-image: url(../images/main/cate12.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.theme2 .default {
+	background-image: url(../images/main/cate12.png)
+}
+
+.cutter.theme3 .cover {
+	background-image: url(../images/main/cate13-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.theme3 .cover {
+		background-image: url(../images/main/cate13-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.theme3 .default {
+		background-image: url(../images/main/cate13.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.theme3 .default {
+	background-image: url(../images/main/cate13.png)
+}
+
+.cutter.theme4 .cover {
+	background-image: url(../images/main/cate14-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.theme4 .cover {
+		background-image: url(../images/main/cate14-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.theme4 .default {
+		background-image: url(../images/main/cate14.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.theme4 .default {
+	background-image: url(../images/main/cate14.png)
+}
+
+.cutter.theme5 .cover {
+	background-image: url(../images/main/cate15-over.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.theme5 .cover {
+		background-image: url(../images/main/cate15-over.png);
+		background-size: 130px 130px
+	}
+	.cutter.theme5 .default {
+		background-image: url(../images/main/cate15.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.theme5 .default {
+	background-image: url(../images/main/cate15.png)
+}
+
+.cutter.baro .default {
+	background-image: url(../images/main/baro.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.baro .default {
+		background-image: url(../images/main/baro.png);
+		background-size: 130px 130px
+	}
+	.cutter.summer .cover {
+		background-image: url(../images/main/cate16-over.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.summer .cover {
+	background-image: url(../images/main/cate16-over.png)
+}
+
+.cutter.summer .default {
+	background-image: url(../images/main/cate16.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.summer .default {
+		background-image: url(../images/main/cate16.png);
+		background-size: 130px 130px
+	}
+	.cutter.nothing .default {
+		background-image: url(../images/main/nothing.png);
+		background-size: 130px 130px
+	}
+}
+
+.cutter.nothing .default {
+	background-image: url(../images/main/nothing.png)
+}
+
+.cutter.promo {
+	text-indent: 0 !important
+}
+
+.cutter.promo .default ul {
+	opacity: 1 !important
+}
+
+.cutter.promo .default li {
+	float: left;
+	width: 440px;
+	height: 440px;
+	padding: 0;
+	background-size: 440px 440px
+}
+
+.cutter.promo .default li.promo_bangga_201508001 {
+	background-image:
+		url(../images/temp/promo_bangga_201508001.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.promo .default li.promo_bangga_201508001 {
+		background-image:
+			url(../images/temp/promo_bangga_201508001@2.png);
+		background-size: 290px 290px
+	}
+}
+
+.cutter.promo .default li.promo_surprise {
+	background-image:
+		url(../images/temp/promo_surprise.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.promo .default li.promo_surprise {
+		background-image:
+			url(../images/temp/promo_surprise@2.png);
+		background-size: 290px 290px
+	}
+}
+
+.cutter.promo .default li.promo_urgent {
+	background-image:
+		url(../images/temp/promo_urgent.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.promo .default li.promo_urgent {
+		background-image:
+			url(../images/temp/promo_urgent@2.png);
+		background-size: 290px 290px
+	}
+}
+
+.cutter.promo .default li.promo_deliverygod_main02 {
+	background-image:
+		url(../images/temp/promo_deliverygod_main02.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.promo .default li.promo_deliverygod_main02 {
+		background-image:
+			url(../images/temp/promo_deliverygod_main02@2.png);
+		background-size: 290px 290px
+	}
+}
+
+.cutter.promo .default li.promo_bangga2_july {
+	background-image:
+		url(../images/temp/promo_bangga2_july.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.promo .default li.promo_bangga2_july {
+		background-image:
+			url(../images/temp/promo_bangga2_july@2.png);
+		background-size: 290px 290px
+	}
+}
+
+.cutter.promo .default li.promo_tmember {
+	background-image:
+		url(../images/temp/promo_tmember.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.promo .default li.promo_tmember {
+		background-image:
+			url(../images/temp/promo_tmember@2.png);
+		background-size: 290px 290px
+	}
+}
+
+.cutter.promo .default li.promo_bangga2_1506 {
+	background-image:
+		url(../images/temp/promo_bangga2_1506.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.promo .default li.promo_bangga2_1506 {
+		background-image:
+			url(../images/temp/promo_bangga2_1506@2.png);
+		background-size: 290px 290px
+	}
+}
+
+.cutter.promo .default li.promo_couponset {
+	background-image:
+		url(../images/temp/promo_couponset.png)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.cutter.promo .default li.promo_couponset {
+		background-image:
+			url(../images/temp/promo_couponset@2.png);
+		background-size: 290px 290px
+	}
+}
+
+.cutter.promo .default li a {
+	float: left;
+	width: 440px;
+	height: 440px;
+	font-size: 0
+}
+
+.cutter.game .default {
+	background-image: url(../images/main/game1.png)
+}
+
+.cutter.game .default.mobile {
+	background-image: url(../images/main/game2.png)
+}
+
+.cutter .btn-control a, .pager a {
+	display: inline-block;
+	background-image:
+		url(../images/main/carou-controls.png);
+	background-repeat: no-repeat
+}
+
+.cutter .btn-control a {
+	top: 50%;
+	width: 30px;
+	height: 47px;
+	margin-top: -25px;
+	text-indent: -9999px
+}
+
+.cutter .btn-control a.prev {
+	left: 20px;
+	background-position: -100px 0
+}
+
+.cutter .btn-control a.next {
+	right: 20px;
+	background-position: -150px 0
+}
+
+.pager {
+	left: 50%;
+	bottom: 30px;
+	width: 440px;
+	margin-left: -220px
+}
+
+.pager a {
+	width: 14px;
+	height: 14px;
+	margin: 0 5px;
+	background-position: -50px 0
+}
+
+.pager a.selected {
+	background-position: 0 0
+}
+
+.pager a span {
+	display: block;
+	text-indent: -9999px
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , screen and
+	(max-width:320px) {
+	.boxm {
+		padding: 15px
+	}
+	.boxm.col1 {
+		width: 160px
+	}
+	.boxm.col2 {
+		width: 320px
+	}
+	.boxm.col2 .default {
+		width: 290px !important;
+		height: 290px !important
+	}
+	.boxm.col2 .default li {
+		width: 290px;
+		height: 290px;
+		border-radius: 100%
+	}
+	.boxm .cutter .cover {
+		display: none
+	}
+	.boxm .cutter .default {
+		width: 130px;
+		height: 130px
+	}
+	.boxm .cutter.chicken .default:hover {
+		background-image: url(../images/main/cate01-over.png)
+	}
+	.boxm .cutter.chinese .default:hover {
+		background-image: url(../images/main/cate02-over.png)
+	}
+	.boxm .cutter.pizza .default:hover {
+		background-image: url(../images/main/cate03-over.png)
+	}
+	.boxm .cutter.korean .default:hover {
+		background-image: url(../images/main/cate04-over.png)
+	}
+	.boxm .cutter.jokbal .default:hover {
+		background-image: url(../images/main/cate05-over.png)
+	}
+	.boxm .cutter.night .default:hover {
+		background-image: url(../images/main/cate06-over.png)
+	}
+	.boxm .cutter.tang .default:hover {
+		background-image: url(../images/main/cate07-over.png)
+	}
+	.boxm .cutter.japanese .default:hover {
+		background-image: url(../images/main/cate08-over.png)
+	}
+	.boxm .cutter.dosirak .default:hover {
+		background-image: url(../images/main/cate09-over.png)
+	}
+	.boxm .cutter.fastfood .default:hover {
+		background-image: url(../images/main/cate10-over.png)
+	}
+	.boxm .cutter.theme1 .default:hover {
+		background-image: url(../images/main/cate11-over.png)
+	}
+	.boxm .cutter.theme2 .default:hover {
+		background-image: url(../images/main/cate12-over.png)
+	}
+	.boxm .cutter.theme3 .default:hover {
+		background-image: url(../images/main/cate13-over.png)
+	}
+	.boxm .cutter.theme4 .default:hover {
+		background-image: url(../images/main/cate14-over.png)
+	}
+	.boxm .cutter.theme5 .default:hover {
+		background-image: url(../images/main/cate15-over.png)
+	}
+	.boxm .cutter.summer .default:hover {
+		background-image: url(../images/main/cate16-over.png)
+	}
+	.boxm .cutter.promo .default ul {
+		height: 290px
+	}
+	.boxm .cutter.promo .default li {
+		width: 290px;
+		height: 290px;
+		background-size: 290px 290px
+	}
+	.boxm .cutter.promo .default li a {
+		width: 290px;
+		height: 290px
+	}
+	.boxm .cutter .btn-control a {
+		top: 55%;
+		width: 17px;
+		height: 26px;
+		background-size: 100px 25px;
+		-webkit-background-size: 100px 25px
+	}
+	.boxm .cutter .btn-control a.prev {
+		left: 10px;
+		background-position: -50px 0
+	}
+	.boxm .cutter .btn-control a.next {
+		right: 10px;
+		background-position: -75px 0
+	}
+	.boxm .cutter .pager {
+		width: 300px;
+		bottom: 10px;
+		margin-left: -150px
+	}
+	.boxm .cutter .pager a {
+		width: 8.5px;
+		height: 9px;
+		margin: 0 3px;
+		background-size: 100px 25px;
+		-webkit-background-size: 100px 25px;
+		background-position: -25px -17px
+	}
+	.boxm .cutter .pager a.selected {
+		background-position: 0 -17px
+	}
+}
+
+@media only screen and (max-width:320px) {
+	.boxm {
+		padding: 10px
+	}
+	.boxm.col1 {
+		width: 150px
+	}
+	.boxm.col2 {
+		width: 300px
+	}
+	.cutter .cover {
+		display: none
+	}
+	.cutter .default {
+		width: 130px;
+		height: 130px;
+		background-size: 130px 130px;
+		-webkit-background-size: 130px 130px
+	}
+	.promo .caroufredsel_wrapper, .promo ul {
+		height: 280px
+	}
+	.promo .caroufredsel_wrapper li, .promo ul li {
+		width: 280px;
+		height: 280px;
+		background-size: 280px 280px;
+		-webkit-background-size: 280px 280px
+	}
+	.pager {
+		margin-left: -8px
+	}
+}
+
+footer {
+	border-top: 1px solid #e5e5e5
+}

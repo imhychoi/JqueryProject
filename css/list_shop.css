@@ -1,0 +1,422 @@
+
+.toggle-area {
+	background-color: #f4f2ee;
+	background-image: url(https://img.woowahan.com/www/common/ln-dotted.png);
+	background-repeat: repeat-x;
+	background-position: top left
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 0
+}
+
+.container {
+	margin-top: .8em;
+	margin-bottom: 1.5em
+}
+
+@media ( min-width :768px) {
+	.container {
+		margin-top: 2.4em;
+		margin-bottom: 3em
+	}
+}
+
+.srch-result-info {
+	position: relative;
+	margin: 0 0 10px
+}
+
+.srch-result-info .pull-left {
+	padding-top: 10px;
+	padding-bottom: 10px
+}
+
+@media ( min-width :768px) {
+	.srch-result-info .pull-left {
+		padding-bottom: 0
+	}
+}
+
+.srch-result-info .pull-left em {
+	display: inline-block;
+	margin-top: -1px;
+	padding: 0 5px;
+	font-size: 85%;
+	vertical-align: top;
+	color: #b9b3a6
+}
+
+@media ( max-width :767px) {
+	.srch-result-info .pull-right {
+		float: none !important;
+		clear: both
+	}
+	.srch-result-info .pull-right select {
+		width: 100%
+	}
+	.srch-result-info .pull-right .select-style, .srch-result-info .pull-right .select-style-inner
+		{
+		width: 100% !important
+	}
+}
+
+.srch-result-info #list_sort {
+	float: right;
+	width: 100%
+}
+
+.srch-result-info #list_sort select {
+	width: 100% !important
+}
+
+.srch-result-info #list_sort .select-style {
+	width: 100%;
+	background-position: 97% center;
+	border: 1px solid #dad3c7
+}
+
+@media ( min-width :768px) {
+	.srch-result-info .pull-left em {
+		font-size: 110%
+	}
+	.srch-result-info {
+		margin: 0 0 15px
+	}
+	.srch-result-info #list_sort {
+		width: auto
+	}
+	.srch-result-info #list_sort select {
+		width: 170px !important
+	}
+	.srch-result-info #list_sort .select-style {
+		width: auto;
+		background-position: 95% center
+	}
+}
+
+.no-shop-list {
+	width: 100%;
+	height: 206px;
+	margin: 40px auto;
+	background-image: url(https://img.woowahan.com/www/shop/img-no-shop.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-indent: -9999px
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) , only screen and
+		(min--moz-device-pixel-ratio:2) , only screen and
+		(-o-min-device-pixel-ratio:2/1) , only screen and
+		(min-device-pixel-ratio:2) , only screen and (min-resolution:192dpi) ,
+		only screen and (min-resolution:2dppx) {
+	.no-shop-list {
+		background-image: url(https://img.woowahan.com/www/shop/img-no-shop.png);
+		background-size: 200px 121px
+	}
+}
+
+@media ( min-width :768px) {
+	.no-shop-list {
+		margin: 80px auto
+	}
+}
+
+.shop-list .row {
+	margin-left: -10px;
+	margin-right: -10px
+}
+
+@media ( min-width :480px) and (max-width:981px) {
+	.shop-list .row {
+		margin-left: -20px;
+		margin-right: -20px
+	}
+}
+
+.shop-list .row>div {
+	position: relative;
+	margin-bottom: 10px
+}
+
+@media ( min-width :768px) {
+	.shop-list .row>div {
+		margin-bottom: 20px
+	}
+} /*! List Thumbnail Elements */
+.thumbnail.shop-list-panel {
+	padding: 15px;
+	height: 138px;
+	cursor: pointer
+}
+
+@media ( min-width :981px) {
+	.thumbnail.shop-list-panel {
+		padding: 20px;
+		height: 174px
+	}
+}
+
+.thumbnail.shop-list-panel .inner-brd {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	width: 76px;
+	height: 76px
+}
+
+@media ( min-width :981px) {
+	.thumbnail.shop-list-panel .inner-brd {
+		width: 100px;
+		height: 100px
+	}
+}
+
+.thumbnail.shop-list-panel .inner-brd .mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	background-image:
+		url(https://img.woowahan.com/www/shop/img-circle-mask.png);
+	background-size: 100px 100px
+}
+
+.thumbnail.shop-list-panel .inner-brd img {
+	width: 76px;
+	height: 76px
+}
+
+.thumbnail.shop-list-panel .caption {
+	overflow: hidden;
+	padding-left: 12px
+}
+
+@media ( min-width :981px) {
+	.thumbnail.shop-list-panel .inner-brd img {
+		width: 100px;
+		height: 100px
+	}
+	.thumbnail.shop-list-panel .caption {
+		padding-left: 15px
+	}
+}
+
+.thumbnail.shop-list-panel .caption>h2 {
+	display: block;
+	width: 100%;
+	font-size: 100%;
+	font-weight: 700;
+	margin: 2px 0 0
+}
+
+@media ( min-width :981px) {
+	.thumbnail.shop-list-panel .caption>h2 {
+		margin-top: 5px
+	}
+}
+
+@media ( min-width :768px) {
+	.thumbnail.shop-list-panel .caption .of-h {
+		margin-top: 4px
+	}
+}
+
+.thumbnail.shop-list-panel .caption .rating {
+	margin: 4px 0 6px
+}
+
+@media ( min-width :981px) {
+	.thumbnail.shop-list-panel .caption .rating {
+		margin: 5px 0 9px
+	}
+}
+
+.thumbnail.shop-list-panel .caption .addr {
+	color: #8a8b8f;
+	font-size: 80%;
+	margin-bottom: 10px
+}
+
+@media ( min-width :981px) {
+	.thumbnail.shop-list-panel .caption .addr {
+		margin-bottom: 26px
+	}
+}
+
+.thumbnail.shop-list-panel .caption .shop-info-fav {
+	font-size: 80%;
+	margin-bottom: 2px
+}
+
+.thumbnail.shop-list-panel .caption .shop-info-fav>span {
+	display: inline-block
+}
+
+.thumbnail.shop-list-panel .caption .shop-info-fav>span:first-child {
+	margin-right: 5px
+}
+
+@media ( min-width :981px) {
+	.thumbnail.shop-list-panel .caption .shop-info-fav {
+		margin-bottom: 6px
+	}
+	.thumbnail.shop-list-panel .caption .shop-info-fav>span:first-child {
+		margin-right: 10px
+	}
+}
+
+.thumbnail.shop-list-panel .caption .shop-info-tag.pay span {
+	background-color: #d2d2d2;
+	padding-left: 4px;
+	padding-right: 4px
+}
+
+.thumbnail.shop-list-panel .caption .shop-info-tag.pay span.on {
+	background-color: #1abcaa
+}
+
+.thumbnail.shop-list-panel.closed {
+	position: relative
+}
+
+.thumbnail.shop-list-panel.closed .inner-brd img {
+	-moz-opacity: .3;
+	opacity: .3;
+	filter: alpha(opacity = 30)
+}
+
+.thumbnail.shop-list-panel.closed .dim {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	z-index: 15;
+	-moz-opacity: .7;
+	opacity: .7;
+	filter: alpha(opacity = 70);
+	background-color: #f4ebdd
+}
+
+.thumbnail.shop-list-panel.closed .ico-baro {
+	filter: alpha(opacity = 60)
+}
+
+@media ( max-width :767px) {
+	.lt-ie-9 .container .srch-result-info.of-h.small {
+		margin-left: 0 !important
+	}
+}
+
+@media ( max-width :981px) {
+	.thumbnail.shop-list-panel .inner-brd .mask {
+		background-image:
+			url(https://img.woowahan.com/www/shop/img-circle-mask@2.png);
+		background-size: 76px 76px
+	}
+	.lt-ie-9 .thumbnail.shop-list-panel .inner-brd .mask {
+		background-image:
+			url(https://img.woowahan.com/www/shop/img-circle-mask-ie8.png);
+		background-size: 76px 76px
+	}
+}
+
+.thumbnail.shop-list-panel.nothumb {
+	height: 63px;
+	padding: 15px
+}
+
+@media ( min-width :767px) {
+	.thumbnail.shop-list-panel.nothumb {
+		height: 77px;
+		padding: 20px
+	}
+}
+
+.thumbnail.shop-list-panel.nothumb .caption {
+	padding-left: 0;
+	width: 100%
+}
+
+.thumbnail.shop-list-panel.nothumb .caption>h2 {
+	margin-top: 0
+}
+
+.thumbnail.shop-list-panel.nothumb .caption .rating {
+	width: auto;
+	margin-top: 2px
+}
+
+@media ( min-width :767px) {
+	.thumbnail.shop-list-panel.nothumb .caption .rating {
+		margin: 0
+	}
+}
+
+.thumbnail.shop-list-panel.nothumb .caption .shop-info-fav {
+	margin: 0;
+	line-height: 1.9
+}
+
+.thumbnail.shop-list-panel.nothumb .caption .shop-info-fav span {
+	margin: 0 0 0 10px
+}
+
+@media ( min-width :767px) {
+	.thumbnail.shop-list-panel.nothumb .caption .shop-info-fav {
+		line-height: 1.8
+	}
+}
+
+.ico-baro {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 41px;
+	height: 41px;
+	background-image: url(https://img.woowahan.com/www/common/ico-baro.gif)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2) {
+	.ico-baro {
+		width: 42px;
+		height: 42px;
+		background-image:
+			url(https://img.woowahan.com/www/common/ico-baro@2.gif);
+		background-size: 100% 100%;
+		-webkit-background-size: 100% 100%
+	}
+}
+
+.shop-closed {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -12px 0 0 -76px;
+	padding: 8px 10px 7px;
+	background: #222;
+	border-radius: 3px;
+	font-size: 85%;
+	color: #fff;
+	z-index: 20;
+	cursor: pointer
+}
+
+@media ( min-width :768px) {
+	.shop-closed {
+		padding: 8px 10px 5px;
+		font-size: 80%
+	}
+}
+
+#viewLoading {
+	width: 100%;
+	margin: 0 auto 20px;
+	text-align: center
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="autocomplete" content="off">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <link rel="shortcut icon" href="http://img.woowahan.com/www/common/favicon.ico">
+    <link rel="apple-touch-icon" href="images/favicon.png?v=20151106">
+    <link rel="stylesheet" type="text/css" href="css/common1.css">
+    <link rel="stylesheet" type="text/css" href="css/member.css">
+    <!--[if lt IE 10]>
+    <link rel="stylesheet" type="text/css" href="https://pop.baemin.com/webui/bm_auth/pc/css/ie_low.css">
+    <![endif]-->
+</head>
+<body>
+
+<div id="wrap" class="login-wrap">
+
+    <!-- (s)content -->
+    <div id="content" class="content">
+        <div class="inner-con">
+            <h1 class="logo"><img src="images/common/logo-bm-v2.png" alt="유캔두잇"></h1>
+            <fieldset>
+                <legend>로그인</legend>
+                    <div class="input-group">
+                        <div class="input-row">
+                            <label for="">Do Eat ID(이메일 또는 아이디)</label>
+                            <input type="email" maxlength="40" name="id" id="id" placeholder="Do Eat ID(이메일 또는 아이디)" OnKeyDown="checkKey(this)"  tabindex="1">
+                            <button type="button" title="delete" id="delete-id" class="icon-input-del" onclick="deleteId()"><span class="blind">삭제</span></button>
+                        </div>
+                        <div class="input-row">
+                            <label for="">비밀번호 (4~20자)</label>
+                            <input type="password" maxlength="20" name="pwd" id="pwd" placeholder="비밀번호 (4~20자)" OnKeyDown="checkKey(this)"  tabindex="2">
+                            <button type="button" title="delete" id="delete-pwd" class="icon-input-del" onclick="deletePwd()"><span class="blind">삭제</span></button>
+                        </div>
+                    </div>
+                    <p id="empty-info" class="txt-refer" style="display: none;">계정 정보를 입력해 주세요.</p>
+                    <p id="wrong-info" class="txt-refer" style="display: none;">계정 정보가 일치하지 않습니다. 다시 입력 해주세요.</p>
+                    <p id="block-info" class="txt-refer" style="display: none;">해당 아이디로는 회원가입이 불가능 합니다. 고객센터(9876-5432)로 문의해 주세요.</p>
+                    <div class="btn-block"><button type="button" class="btn-primary" onclick="login()">로그인</button></div>
+                <div class="members-link">
+                    <a href="signup_step1.html" class="txt-link link-join">Do Eat ID 만들기</a>
+            <span class="link-find">
+              <a href="javascript:openNewWindow('find_id.html', 440, 555);" class="txt-link">아이디 찾기</a>
+              <a href="javascript:openNewWindow('find_pw.html', 440, 555);"  class="txt-link">비밀번호 찾기</a>
+            </span>
+                </div>
+               <!-- <div class="btn-block"><button type="button" class="btn-facebook" onclick="login_facebook()">페이스북으로 시작하기</button></div> -->
+                <div class="nonmember" style="display: none;">
+                    <div class="btn-block"><button type="button" class="btn-default">비회원으로 주문</button></div>
+                    <p class="txt">비회원 주문시 포인트, 이벤트 등의 혜택은 받을 수 없습니다.</p>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <!-- (e)content -->
+
+    <!-- (s)footer -->
+    <div class="sticky-footer">
+        <p class="txt-basic">유 캔 Do Eat은 Do Eat ID로 로그인하실 수 있습니다. <a href="info.html">Do Eat ID 안내</a></p>
+    </div>
+    <!-- (e)footer -->
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/oauthmember.common.js"></script>
+<script src="js/placeholder.min.js"></script>
+<script type="text/javascript">
+    function openNewWindow(url, width, height) {
+        var specs = "left=10,top=10,width=" + width + ",height=" + height;
+        specs += ",toolbar=no,menubar=no,status=no,scrollbars=1,resizable=no";
+        window.open(url, "_blank", specs);
+    }
+    //--------------------------------------------------------------------------
+    //PURPOSE : 아이디 정보 삭제
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function deleteId() {
+        $("#id").val("");
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 비밀번호 정보 삭제
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function deletePwd() {
+        $("#pwd").val("");
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 필드 키다운 체크
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function checkKey(objName) {
+        var keycode = event.keyCode;
+
+        if( keycode == 13 ){ //엔터
+
+            if (objName.name == "id") {
+                $("#pwd").focus();
+                return;
+            }
+
+            if (objName.name == "pwd") {
+                login();
+                return;
+            }
+        }
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 로그인 처리
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function login() {
+
+        $("#empty-info").css("display", "none");
+        $("#wrong-info").css("display", "none");
+        $("#block-info").css("display", "none");
+        var id = $("#id").val();
+        var pwd = $("#pwd").val();
+
+        if (!loginInfoValidation(id, pwd)) {
+            return;
+        }
+
+        wrapWindowByMask();
+
+       window.location.href = "index.html";
+	}
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : facebook 로그인 처리
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function login_facebook() {
+        $('<iframe/>').attr('src','https://auth.baemin.com/logout').appendTo('body');
+        setTimeout(function () {
+            var clientId = 'baeminService';
+            var url = 'https://auth.baemin.com/oauth/authorize';
+            var redirectUri = 'https://www.baemin.com/oauthmember/sns_response';
+            var scope = 'read';
+            var state;
+
+            var rand = Math.random();
+            var dateTime = new Date().getTime();
+            var state = rand * dateTime;
+
+            var url = url;
+            url += '?response_type=code'
+                + '&redirect_uri=' + encodeURIComponent(redirectUri)
+                + '&client_id=' + encodeURIComponent(clientId)
+                + '&scope=' + encodeURIComponent(scope);
+            + '&state=' + encodeURIComponent(state);
+
+            window.location.href = url;
+        }, 700);
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 사용자 정보 validation
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function loginInfoValidation(id, pwd) {
+        if ((id.length == 0 || pwd.length == 0)
+                || pwd.length < 4) {
+            $("#empty-info").css("display", "block");
+            return false;
+        }
+
+        return true;
+    }
+
+    function wrapWindowByMask() {
+        //화면의 높이와 너비를 구한다.
+        var maskHeight = $(document).height();
+//      var maskWidth = $(document).width();
+        var maskWidth = window.document.body.clientWidth;
+
+        var mask = "<div id='mask' style='position:absolute; z-index:9000; background-color:#ffffff; display:none; left:0; top:0;'></div>";
+        var loadingImg = '';
+
+        loadingImg += "<div id='loadingImg' style='position:absolute; left:48%; top:48%; display:none; z-index:10000;'>";
+        loadingImg += " <img src='/img/loading_gif.gif'/>";
+        loadingImg += "</div>";
+
+        //화면에 레이어 추가
+        $('body')
+            .append(mask)
+            .append(loadingImg)
+
+        //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+        $('#mask').css({
+            'width' : maskWidth
+            , 'height': maskHeight
+            , 'opacity' : '1.0'
+        });
+
+        //마스크 표시
+        $('#mask').show();
+
+        //로딩중 이미지 표시
+        $('#loadingImg').show();
+    }
+
+    function closeWindowByMask() {
+        $('#mask, #loadingImg').hide();
+        $('#mask, #loadingImg').remove();
+    }
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"cdaa284ae5","applicationID":"32547999","transactionName":"Z1dTYBdZW0ZTUUFfXl4dZEYMF0NUQB1CQUYfWkVZCRdXVFdfXFgfU11cGxJPQhpbXFFTSR5CWUQ=","queueTime":0,"applicationTime":54,"atts":"SxBEFl9DSBkQUxcMSk1P","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+

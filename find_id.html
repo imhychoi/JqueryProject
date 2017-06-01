@@ -1,0 +1,369 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ID 찾기</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="autocomplete" content="off">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/favicon.png?v=20151106">
+    <link rel="stylesheet" type="text/css" href="css/common1.css">
+    <link rel="stylesheet" type="text/css" href="css/member.css">
+    <!--[if lt IE 10]>
+    <link rel="stylesheet" type="text/css" href="https://pop.baemin.com/webui/bm_auth/pc/css/ie_low.css">
+    <![endif]-->
+</head>
+<body>
+
+<div id="wrap" class="find-wrap phone-wrap">
+    <!-- (s)content -->
+    <div id="content" class="content">
+        <ul class="tab-ty1">
+            <li class="current"><a href="#">ID 찾기</a></li>
+            <li><a href="find_pw.html">비밀번호 찾기</a></li>
+        </ul>
+        <div class="inner-con">
+            <fieldset>
+                <legend>ID 찾기</legend>
+                <h2 class="title">휴대폰 인증<span class="desc">ID 조회를 위해 전화번호 인증이 필요합니다.</span></h2>
+                <div class="mobile-check">
+                    <div class="input-row"><input type="tel" maxlength="3" name="mobile1" id="mobile1"/></div>
+                    <div class="input-row"><input type="tel" maxlength="4" name="mobile2" id="mobile2"/></div>
+                    <div class="input-row"><input type="tel" maxlength="4" name="mobile3" id="mobile3"/></div>
+                    <button type="button" class="btn-default chk-m" id="certno-Btn" onclick="sendCertNo()">인증번호 전송</button>
+                    <button type="button" class="btn-default chk-m line2" id="recertno-Btn" onclick="sendCertNo()" style="display: none">인증번호<br>재전송</button>
+                </div>
+                <div class="mobile-certify">
+                    <div class="input-row">
+                        <input type="tel" name="certno" id="certno" placeholder="인증번호 입력">
+                        <button type="button" title="delete" id="delete-certno" class="icon-input-del" onclick="deleteCertNo()"><span class="blind">삭제</span></button>
+                    </div>
+                    <button type="button" class="btn-default chk-m" onclick="checkCertNo()">인증</button>
+                </div>
+                <p id="not-mobile" class="txt-refer" style="display: none;">휴대폰 번호를 확인해주세요.</p>
+                <p id="not-cert" class="txt-refer" style="display: none;">휴대폰 인증을 해주세요.</p>
+                <p id="certno-time" class="txt-time" style="display: none;">남은시간 <span class="time" id="time">5:00</span></p>
+                <p id="empty-certno" class="txt-refer" style="display: none;">인증번호를 입력해 주세요.</p>
+                <p id="wrong-certno" class="txt-refer" style="display: none;">인증번호가 올바르지 않습니다.</p>
+                <p id="notime-certno" class="txt-refer" style="display: none;">1분뒤에 다시시도해주세요.</p>
+
+                <div id="idList" class="id-list" style="display: none">
+                    <h2 class="title">고객님의 아이디 목록입니다.</h2>
+                    <ul id="ids">
+                    </ul>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <!-- (e)content -->
+
+    <!-- (s)footer -->
+    <div class="sticky-footer">
+        <p class="txt-copyr">자세한 사항은 고객센터 9876-5432로 문의하여 주시기 바랍니다.</p>
+    </div>
+    <!-- (e)footer -->
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/oauthmember.common.js"></script>
+<script src="js/placeholder.min.js"></script>
+<script type="text/javascript">
+    var timerId;
+    var isCertSuccess = false;
+    var page = 0;
+    var idsCount = 0;
+    var phoneNum;
+    var isSendCertNo = false;
+    
+    $(document).ready(function() {
+        $(".mobile-certify").hide();
+    });
+
+	// 인증번호 발송
+	function sendCertNo() {
+
+		$("#not-mobile").css("display", "none");
+        $("#not-cert").css("display", "none");
+        $("#notime-certno").css("display", "none");
+        $("#empty-certno").css("display", "none");
+        $("#wrong-certno").css("display", "none");
+
+        var validTimeMinute = parseInt($("#time").text().split(':')[0]);
+        if(validTimeMinute < 5 && validTimeMinute > 3) {
+            $("#notime-certno").css("display", "block");
+            return;
+        }
+        $("#certno-time").css("display", "none");
+
+        $("#certno").val("");
+
+        $("#idList").hide();
+        $("#ids").empty();
+
+        clearInterval(timerId);
+
+        var regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
+        var phoneNum = $("#mobile1").val() + $("#mobile2").val() + $("#mobile3").val();
+
+        if(!regPhone.test(phoneNum)) {
+            $("#not-mobile").css("display", "block");
+		}else{
+
+		$("#certno-Btn").css("display", "none");
+                        $("#recertno-Btn").css("display", "block");
+                        $(".mobile-certify").show();
+                        $("#certno-time").css("display", "block");
+                        $("#not-mobile").css("display", "none");
+                        var minutes = 60 * 5;
+                        startTimer(minutes);
+                        alert("인증번호가 발송되었습니다.");
+	}
+	}
+
+
+
+    /*//--------------------------------------------------------------------------
+    //PURPOSE : 인증번호 초기화
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function deleteCertNo() {
+        $("#certNo").val("");
+    }*/
+
+    /*//--------------------------------------------------------------------------
+    //PURPOSE : 인증번호 발송/재발송
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function sendCertNo() {
+        if (isSendCertNo) {
+            return;
+        }
+
+        $("#not-mobile").css("display", "none");
+        $("#not-cert").css("display", "none");
+        $("#notime-certno").css("display", "none");
+        $("#empty-certno").css("display", "none");
+        $("#wrong-certno").css("display", "none");
+
+        var validTimeMinute = parseInt($("#time").text().split(':')[0]);
+        if(validTimeMinute < 5 && validTimeMinute > 3) {
+            $("#notime-certno").css("display", "block");
+            return;
+        }
+        $("#certno-time").css("display", "none");
+
+        $("#certno").val("");
+
+        $("#idList").hide();
+        $("#ids").empty();
+
+        clearInterval(timerId);
+
+        var regPhone = /^((01[1|6|7|8|9])[1-9]+[0-9]{6,7})|(010[1-9][0-9]{7})$/;
+        var phoneNum = $("#mobile1").val() + $("#mobile2").val() + $("#mobile3").val();
+
+        if(!regPhone.test(phoneNum)) {
+            $("#not-mobile").css("display", "block");
+        } else {
+            isSendCertNo = true;
+            deleteCertNo();
+            
+                success: function(data){
+                    var result = JSON.parse(data);
+                    if(result.result != undefined && result.result.status == "SUCCESS")
+                    {
+                        $("#certno-Btn").css("display", "none");
+                        $("#recertno-Btn").css("display", "block");
+                        $(".mobile-certify").show();
+                        $("#certno-time").css("display", "block");
+                        $("#not-mobile").css("display", "none");
+                        var minutes = 60 * 5;
+                        startTimer(minutes);
+                        alert("인증번호가 발송되었습니다.");
+                    }
+                    else
+                    {
+                        $("#not-cert").css("display", "block");
+                    }
+                },
+                complete : function(data) {
+                    isSendCertNo = false;
+                },
+                error:function(request,status,error) {
+                    $("#not-cert").css("display", "block");
+                }
+            });
+        }
+    }*/
+
+	//인증번호 인증
+	function checkCertNo(){
+		alert("휴대폰 인증에 성공하였습니다.");
+                        isCertSuccess = true;
+                        $("#certno-Btn").css("display", "block");
+                        $("#certno-Btn").text("재인증");
+                        $("#recertno-Btn").css("display", "none");
+                        $(".mobile-certify").hide();
+                        $("#certno-time").css("display", "none");
+                        $("#empty-certno").css("display", "none");
+                        $("#wrong-certno").css("display", "none");
+                        $("#certno").val("");
+                        $("#time").text("")
+                        clearInterval(timerId);
+	}
+
+   /* //--------------------------------------------------------------------------
+    //PURPOSE : 인증번호 인증
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function checkCertNo() {
+        $("#idList").hide();
+        $("#not-mobile").css("display", "none");
+        $("#not-cert").css("display", "none");
+        $("#notime-certno").css("display", "none");
+        $("#empty-certno").css("display", "none");
+        $("#wrong-certno").css("display", "none");
+
+        var certMobileNo = $("#certno").val();
+        phoneNum = $("#mobile1").val() + $("#mobile2").val() + $("#mobile3").val();
+
+        if(certMobileNo == "") {
+            $("#empty-certno").css("display", "block");
+        } else {
+            $.ajax({
+                url: "/oauthmember/confirm_certNo",
+                type: "POST",
+                data: {
+                    "mobileNo" : phoneNum,
+                    "certNo" : certMobileNo
+                },
+                success: function(data){
+                    var result = JSON.parse(data);
+                    if (result.result != undefined && result.result.status == "SUCCESS")
+                    {
+                        alert("휴대폰 인증에 성공하였습니다.");
+                        isCertSuccess = true;
+                        $("#certno-Btn").css("display", "block");
+                        $("#certno-Btn").text("재인증");
+                        $("#recertno-Btn").css("display", "none");
+                        $(".mobile-certify").hide();
+                        $("#certno-time").css("display", "none");
+                        $("#empty-certno").css("display", "none");
+                        $("#wrong-certno").css("display", "none");
+                        $("#certno").val("");
+                        $("#time").text("")
+                        clearInterval(timerId);
+
+                        getIds(0);
+                    }
+                    else
+                    {
+                        $("#wrong-certno").css("display", "block");
+                    }
+                },
+                error:function(request,status,error){
+                    $("#wrong-certno").css("display", "block");
+                }
+            });
+        }
+    }
+
+    //--------------------------------------------------------------------------
+    //PURPOSE : 아이디 목록 호출
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function getIds(page) {
+        if (page == 0) idsCount = 0;
+        
+        $.ajax({
+            url: "/oauthmember/ids",
+            type: "POST",
+            data: {
+                "mobileNo" : phoneNum,
+                "page" : page
+            },
+            success: function(data){
+                var result = JSON.parse(data);
+                //ID 목록 출력
+                if (result.result.data.sns) {
+                    alert("FaceBook 연동이 되어 있습니다.\n사용하시는 Facebook으로 로그인해주세요.")
+                    return;
+                } else if (result.result.data.totalCount == 0) {
+                    alert("ID가 없습니다.\n*자세한 사항은 고객센터(1644-0025)로 문의하여 주시기 바랍니다.")
+                    return;
+                } else {
+                    idsCount += result.result.data.idsCount;
+                    var body = $("#ids");
+
+                    if (page == 0) body.empty();
+                    $("#moreList").remove();
+                    $("#idList").show();
+
+                    var str = "";
+                    $.each(result.result.data.ids, function () {
+                        str += "<li>" + this + "</li>";
+
+                    });
+
+                    if (result.result.data.totalCount > idsCount) {
+                        page += 1;
+                        str += "<br><div align='center'><button type='button' id='moreList' class='btn-default chk-m' onclick='getIds(" +page +")' value='더보기'>더보기</button></div>"
+                    }
+                    body.append(str);
+                }
+            },
+            error:function(request,status,error){
+
+            }
+        });
+    }
+*/
+    //--------------------------------------------------------------------------
+    //PURPOSE : 인증 번호 인증시간 처리
+    //CREATE  : 2013-09-06 박승규
+    //--------------------------------------------------------------------------
+    function startTimer(duration) {
+        clearInterval(timerId);
+        var start = Date.now(),
+            diff,
+            minutes,
+            seconds;
+
+        function timer() {
+            diff = duration - (((Date.now() - start) / 1000) | 0);
+
+            // does the same job as parseInt truncates the float
+            minutes = (diff / 60) | 0;
+            seconds = (diff % 60) | 0;
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            $("#time").text(minutes + ":" + seconds);
+
+            if (diff <= 0) {
+                $("#time").text("")
+                $("#certno-time").css("display", "none");
+            }
+        };
+        timer();
+        timerId = setInterval(timer, 1000);
+    }
+
+    function digit_check(evt){
+        var code = evt.which?evt.which:event.keyCode;
+        if(code < 48 || code > 57){
+            return false;
+        }
+    } 
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1047d6c32c","applicationID":"35410632","transactionName":"NlRVYkRYXhUEUhFcXw8eYkRfFkYHFx4SQkdOWUNbWhZSBwBcDFseAl5aGUFOR0kMXwFQSE9BX0Y=","queueTime":0,"applicationTime":44,"atts":"GhNCFAxCTUpHUEcPSxxM","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>유캔 Do Eat :: 대한민국 1등 배달앱</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<link rel="stylesheet" href="css/common.css" media="screen">
+<link rel="stylesheet" href="css/info.css" media="screen">
+<link rel="stylesheet" href="css/jquery.bxslider.css">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<script src="js/respond.proxy.min.js"></script>
+	<script src="js/html5shiv.js"></script>
+	<html class="lt-ie-9">
+	<![endif]-->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/placeholder.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.migrate.min.js"></script>
+<script src="js/jquery.lazyload.js"></script>
+<script src="js/jquery.lazyloadimg.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/ui.common.js"></script>
+<script src="js/common.js"></script>
+<script src="js/jquery.masonry.min.js"></script>
+<script src="js/jquery.carouFredSel.min.js"></script>
+<script src="js/jquery.touchSwipe.min.js"></script>
+<script src="js/kakao.link.js"></script>
+<script src="js/jquery.bxslider.min.js"></script>
+<script src="js/tab.js"></script>
+<script src="js/total.js"></script>
+<!--[if !IE 8]><!-->
+<script src="js/jquery.backgroundPosition.min.js"></script>
+<!--[endif]-->
+
+<script>
+	function OpenInfo(id){
+		document.getElementById(id).style.display = "block";
+	}
+	
+	function CloseInfo(id){
+		document.getElementById(id).style.display = "none";
+	}
+</script>
+</head>
+<body>
+
+<!-- Wrap -->
+<div id="wrap">
+	<!-- Header -->
+	<header>		
+		<!-- Basic TP Area -->
+		<section class="basic-tp-area">
+			<!-- TP Area -->
+			<section class="tp-area">
+
+				<h1>
+					<a href="index.html" class="ir-el">권임심조</a>
+				</h1>
+				<div class="gnb-wrap">
+					<span class="navigation"
+						onclick="toggleLayer('gnb','navigation');return false;">네비게이션</span>
+					<ul class="list-inline gnb">
+					<li><a href="login.html">로그인</a>	<em>|</em></li>
+					<li><a href="signup_step1.html">회원가입</a> <em>|</em></li>
+					<li><a href="faq.html">고객센터</a></li>
+					</ul>
+				</div>				
+
+				<!-- Search Form -->
+				<form class="header-search cate-srch">
+				<fieldset>
+					<legend class="sr-only">검색</legend>
+					<!-- Keyword -->
+					<div class="input-group srch">
+						<input type="text" class="form-control" id="sch_kwd"
+							onkeypress="evtKeyPress(event)" value="업소명을 검색해주세요" 
+							style="ime-mode: inactive "  > 
+						<span class="input-group-btn">
+							<button type="button" class="btn" onclick="fn_sch_kwd(); return false;">검색</button>
+						</span>
+					</div>
+					<!--// Keyword -->
+				</fieldset>
+				</form>
+				<!--// Search Form -->
+			</section>
+			<!--// TP Area -->
+
+			<!-- Category -->
+			<div class="category-set">
+				<dl class="dl-horizontal">
+				<dt class="dt-category"
+					onclick="toggleLayer('cate-srch','dt-category');return false;">카테고리
+					:
+				</dt>
+				<dd class="cate-srch">
+					<div class="cate-area">
+						<ul id="category" class="list-inline list-unstyled">
+						<li class="chicken"	><a href="list_shop.html">치킨</a> <em>|</em></li>
+						<li class="chinese"	><a href="list_shop.html">중국집</a> <em>|</em></li>
+						<li class="pizza"	><a href="list_shop.html">피자</a> <em>|</em></li>
+						<li class="korean"	><a href="list_shop.html">한식,분식</a> <em>|</em></li>
+						<li class="jokbal"	><a href="list_shop.html">족발,보쌈</a> <em>|</em></li>
+						<li class="night"	><a href="list_shop.html">야식</a> <em>|</em></li>
+						<li class="japanese"><a href="list_shop.html">돈까스,회,일식</a> <em>|</em></li>
+						<li class="tang"	><a href="list_shop.html">찜,탕</a> <em>|</em></li>
+						<li class="dosirak"	><a href="list_shop.html">도시락</a> <em>|</em></li>
+						<li class="fastfood"><a href="list_shop.html">패스트푸드</a> <em>|</em></li>
+						<li class="baro"	><a href="list_shop.html">바로결제</a> <em>|</em></li>
+						<li class="etc"		><a href="list_shop.html">기타</a> <em>|</em></li>
+						<li class="all"		><a href="list_shop.html">모아보기</a></li>
+						</ul>
+					</div>
+				</dd>
+				</dl>
+			</div>
+			<!--// Category -->
+
+			
+		</section>
+		<!--// Basic TP Area -->
+	</header>
+	<!--// Header -->
+
+	<!-- Container -->
+	<div class="container">
+		<!-- Shop Info -->
+		<section class="shop-info">
+
+			<ol class="breadcrumb">
+				<li><a href="index.html">홈</a></li>
+				<li><strong><span>치킨</span></strong></li>
+			</ol>
+
+
+			<!-- 상단 업소기본정보 -->
+			<div class="shop-basic-info box">
+				<div class="of-h">
+					<!-- 업소명 -->
+					<h1 class="pull-left">더바스켓 순살치킨 국물떡볶이</h1>
+					<!--// 업소명 -->
+					<!-- 업소주소 -->
+					<span class="addr pull-left small">
+						<em>|</em> 서울특별시 송파구 석촌동
+						<em class="last">|</em></span>
+					<!--// 업소주소 -->
+					<!-- 별점 -->
+					<span class="rating"> 
+						<span class="img_star star_rate">
+							<span class="img_star inner_star" style="width: 80.00%;">별점</span>
+						</span>
+						<strong class="small">63명</strong>
+					</span>
+					<!--// 별점 -->
+					<!-- 결제방식 -->
+					<div class="shop-info-tag">
+						<span class="card on"><a href="#">카드결제</a></span>
+						<span class="phone on"><a href="#">휴대폰결제</a></span>
+						<span class="point on"><a href="#">포인트적립</a></span>
+					</div>
+					<!--// 결제방식 -->
+				</div>
+			</div>
+			<!--// 상단 업소기본정보 -->
+			<!-- Row -->
+			<div class="row">
+				<!-- 업소상세정보 및 장바구니 영역 -->
+				<div class="side-info col-xs-12 col-sm-12 col-md-3 col-lg-3 col-md-push-9 col-lg-push-9">
+					<!-- 우측 업소상세정보 -->
+					<section class="shop-det-info box">
+						<h2 class="bold tog" onclick="toggleLayer('sinfo','tog');">업소상세정보</h2>
+						<dl class="dl-horizontal sinfo xsmall">
+							<dt>최소금액</dt>
+							<dd>13,000원 부터</dd>
+							<dt>운영시간</dt>
+							<dd>낮 12:00 ~ 익일 새벽 01:00</dd>
+							<dt>전화번호</dt>
+							<dd>
+								<strong class="text-primary"
+									itemprop-"telephone" content="024488882">050-6457-3752</strong>
+							</dd>
+							<dt>업소소개</dt>
+							<dd>
+								<div id="intro" itemprop="description">순살치킨과 매운국물떡볶이 더
+									바스켓 입니다</div>
+						</dl>
+					</section>
+					<!--// 우측 업소상세정보 -->
+
+					<!-- 장바구니 // 내역 불러오기 -->
+					<section class="cart box" id="cart_pause" style="display: none">
+						<h2 class="bold"
+							onclick="$(this).next().toggleClass('hidden-xs');">장바구니</h2>
+						<div class="login hidden-xs hidden-sm">
+							<p class="notice small text-center">장바구니 내역을 불러오고 있습니다.</p>
+						</div>
+					</section>
+					<section class="cart box" id="cart_ui" style="display: none">
+					</section>
+					<!--/.cart -->
+
+				</div>
+				<!--/.side-info -->
+
+<!-- Main Info -->
+<div class="main-info col-xs-12 col-sm-12 col-md-9 col-lg-9 col-md-pull-3 col-lg-pull-3">
+<!-- -------------------- Menu Area -------------------- -->
+<div id="menu">
+<!-- Navi Tabs -->
+<ul class="nav nav-tabs nav-justified">
+<li class="active lf-brd"><a href="#menu" class="mn" onclick="clkMenu();return false;">메뉴</a></li>
+<li><a href="#review" class="rv" onclick="clkReview(); return false;">리뷰</a></li>
+</ul>
+<!--// Navi Tabs -->
+<div class="box no-tp-brd">
+<h2 class="sr-only">메뉴</h2>
+
+
+<!-- 메뉴섹션 : S -->
+<section class="menu-sect panel-group" id="accordion">
+
+<!-- 추천메뉴 : S -->
+<div class="panel panel-default">
+<div class="panel-heading collapsed">
+
+    <h3 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse"
+            href="#collapseRecMenu">추천메뉴</a>
+    </h3>
+</div>
+<!--/.panel-heading -->
+<div id="collapseRecMenu" class="panel-collapse collapse in">
+    <div class="panel-body">
+        <div class="row rec-menu">
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail shop-menu-panel"
+                    onclick="openPanel('#collapseInner84');return false;">
+                    <img alt="매운국물떡볶이" src="images/shop/shop1/menu/img_menu1.jpg">
+                    <div class="caption">
+                        <div class="small">
+                            <span class="text-ellipsis">매운국물떡볶이</span> <strong
+                                class="text-ellipsis pull-right">3,000원</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail shop-menu-panel"
+                    onclick="openPanel('#collapseInner93');return false;">
+                    <img alt="오+떡(오뎅+떡볶이)" src="images/shop/shop1/menu/img_menu2.jpg">
+                    <div class="caption">
+                        <div class="small">
+                            <span class="text-ellipsis">오+떡(오뎅+떡볶이)</span> <strong
+                                class="text-ellipsis pull-right">6,000원</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail shop-menu-panel"
+                    onclick="openPanel('#collapseInner83');return false;">
+                    <img alt="순살후라이드" src="images/shop/shop1/menu/img_menu3.jpg">
+                    <div class="caption">
+                        <div class="small">
+                            <span class="text-ellipsis">순살후라이드</span> <strong
+                                class="text-ellipsis pull-right">12,000원</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail shop-menu-panel"
+                    onclick="openPanel('#collapseInner95');return false;">
+                    <img alt="순살양념치킨" src="images/shop/shop1/menu/img_menu4.jpg">
+                    <div class="caption">
+                        <div class="small">
+                            <span class="text-ellipsis">순살양념치킨</span> <strong
+                                class="text-ellipsis pull-right">14,000원</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail shop-menu-panel"
+                    onclick="openPanel('#collapseInner118');return false;">
+                    <img alt="텐더후라이드+모듬감자(기본 / 치즈)" src="images/shop/shop1/menu/img_menu5.jpg">
+                    <div class="caption">
+                        <div class="small">
+                            <span class="text-ellipsis">텐더후라이드+모듬감자(기본 / 치즈)</span>
+                            <strong class="text-ellipsis pull-right">16,000원</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                <div class="thumbnail shop-menu-panel"
+                    onclick="openPanel('#collapseInner85');return false;">
+                    <img alt="인기메뉴 1" src="images/shop/shop1/menu/img_menu6.jpg">
+                    <div class="caption">
+                        <div class="small">
+                            <span class="text-ellipsis">인기메뉴 1</span> <strong
+                                class="text-ellipsis pull-right">20,000원</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.panel-body -->
+</div>
+<!--/.panel-collapse -->
+</div>
+<!--/.panel -->
+<div class="panel panel-default">
+<div class="panel-heading">
+    <h3 class="panel-title">
+        <a class="accordion-toggle" data-toggle="collapse"
+            href="#collapseMenu16">떡볶이메뉴 </a>
+    </h3>
+</div>
+<!--/.panel-heading -->
+<div id="collapseMenu16" class="panel-collapse collapse">
+    <div class="panel-body panel-body-brd">
+        <!-- 메뉴 : S -->
+        <div class="panel-group panel-inner-group"
+            id="accordion-inner">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title of-h">
+                        <a class="accordion-toggle" data-toggle="collapse"
+                            href="#collapseInner84"><span itemprop="menu">매운국물떡볶이</span>
+                            <span class="menu-det">- 매운맛 / 보통맛 / 순한맛 선택가능 -
+                                치즈 추가시 2,000원 - 계란2개 추가시 1,000원</span> </a>
+                        <div class="basic-option-group">
+                            <strong class="price">3,000원</strong> <span
+                                class="opt-open cur" data-toggle="collapse"
+                                href="#collapseInner84">열기</span>
+                        </div>
+                    </div>
+                </div>
+                <!--/.panel-heading -->
+
+                <div id="collapseInner84" class="panel-collapse collapse">
+                    <div class="panel-body panel-body-option">
+                        <div class="menu-info">
+                            <span class="inner-brd"><img alt="매운국물떡볶이" src="images/shop/shop1/menu/img_menu1.jpg"></span><span
+                                class="small"></span>
+                        </div>
+                        <!--/.menu-info -->
+                        <!-- 바로결제 메뉴 : S -->
+                        <div class="select-option small" id="pricegrp_84_1">
+                            <div class="option-tit">
+                                가격 <span class="text-primary">(필수선택)</span>
+                            </div>
+                            <ul class="select-group list-unstyled list-inline">
+                                <li>&middot; 3000원</li>
+                            </ul>
+                        </div>
+                        <!--./select-option -->
+                        <!-- 바로결제 메뉴 : S -->
+                        <div class="select-option small" id="pricegrp_84_2">
+                            <div class="option-tit">
+                                맛 선택 <span class="text-primary">(필수선택)</span>
+                            </div>
+                            <ul class="select-group list-unstyled list-inline">
+                                <li>&middot; 매운맛 : 0원</li>
+                                <li>&middot; 보통맛 : 0원</li>
+                                <li>&middot; 순한맛 : 0원</li>
+                            </ul>
+                        </div>
+                        <!--./select-option -->
+                        <!-- 바로결제 메뉴 : S -->
+                        <div class="select-option small" id="pricegrp_84_3">
+                            <div class="option-tit">
+                                추가선택 <span class="text-primary" name="opt"
+                                    value="opt_p_84_3">(2개까지 선택가능)</span>
+                            </div>
+                            <ul class="select-group list-unstyled list-inline">
+                                <li>&middot; 치즈 추가 : 2000원</li>
+                                <li>&middot; 계란2개 추가 : 1000원</li>
+                            </ul>
+                        </div>
+                        <!--./select-option -->
+                    </div>
+                    <!--/.panel-body -->
+                </div>
+                <!--/.panel-collapse -->
+            </div>
+            <!--/.panel -->
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title of-h">
+                        <a class="accordion-toggle" data-toggle="collapse"
+                            href="#collapseInner93"><span itemprop="menu">오+떡(오뎅+떡볶이)</span>
+                            <span class="menu-det">- 매운맛 / 보통맛 / 순한맛 선택가능 -
+                                치즈 추가시 2,000원 - 계란2개 추가시 1,000원</span> </a>
+                        <div class="basic-option-group">
+                            <strong class="price">6,000원</strong> <span
+                                class="opt-open cur" data-toggle="collapse"
+                                href="#collapseInner93">열기</span>
+                        </div>
+                    </div>
+                </div>
+                <!--/.panel-heading -->
+
+                <div id="collapseInner93" class="panel-collapse collapse">
+                    <div class="panel-body panel-body-option">
+                        <div class="menu-info">
+                            <span class="inner-brd"><img alt="오+떡(오뎅+떡볶이)" src="images/shop/shop1/menu/img_menu2.jpg"></span><span
+                                class="small"></span>
+                        </div>
+                        <!--/.menu-info -->
+                        <!-- 바로결제 메뉴 : S -->
+                        <div class="select-option small" id="pricegrp_93_1">
+                            <div class="option-tit">
+                                가격 <span class="text-primary">(필수선택)</span>
+                            </div>
+                            <ul class="select-group list-unstyled list-inline">
+                                <li>&middot; 6000원</li>
+                            </ul>
+                        </div>
+                        <!--./select-option -->
+                        <!-- 바로결제 메뉴 : S -->
+                        <div class="select-option small" id="pricegrp_93_2">
+                            <div class="option-tit">
+                                맛 선택 <span class="text-primary">(필수선택)</span>
+                            </div>
+                            <ul class="select-group list-unstyled list-inline">
+                                <li>&middot; 매운맛 : 0원</li>
+                                <li>&middot; 보통맛 : 0원</li>
+                                <li>&middot; 순한맛 : 0원</li>
+                            </ul>
+                        </div>
+                        <!--./select-option -->
+                        <!-- 바로결제 메뉴 : S -->
+                        <div class="select-option small" id="pricegrp_93_3">
+                            <div class="option-tit">
+                                추가선택 <span class="text-primary" name="opt"
+                                    value="opt_p_93_3">(2개까지 선택가능)</span>
+                            </div>
+                            <ul class="select-group list-unstyled list-inline">
+                                <li>&middot; 치즈 추가 : 2000원</li>
+                                <li>&middot; 계란2개 추가 : 1000원</li>
+                            </ul>
+                        </div>
+                        <!--./select-option -->
+                    </div>
+                    <!--/.panel-body -->
+                </div>
+                <!--/.panel-collapse -->
+            </div>
+            <!--/.panel -->
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title of-h">
+                        <a class="accordion-toggle" data-toggle="collapse"
+                            href="#collapseInner96"><span itemprop="menu">주먹밥</span>
+                        </a>
+                        <div class="basic-option-group">
+                            <strong class="price">1,000원</strong> <span
+                                class="opt-open cur" data-toggle="collapse"
+                                href="#collapseInner96">열기</span>
+                        </div>
+                    </div>
+                </div>
+                <!--/.panel-heading -->
+
+                <div id="collapseInner96" class="panel-collapse collapse">
+                    <div class="panel-body panel-body-option">
+                        <div class="menu-info">
+                            <span class="inner-brd"><img alt="주먹밥" src=""></span><span
+                                class="small"></span>
+                        </div>
+                        <!--/.menu-info -->
+                        <!-- 바로결제 메뉴 : S -->
+                        <div class="select-option small" id="pricegrp_96_1">
+                            <div class="option-tit">
+                                가격 <span class="text-primary">(필수선택)</span>
+                            </div>
+                            <ul class="select-group list-unstyled list-inline">
+                                <li>&middot; 1개 : 1000원</li>
+                            </ul>
+                        </div>
+                        <!--./select-option -->
+                    </div>
+                    <!--/.panel-body -->
+                </div>
+                <!--/.panel-collapse -->
+            </div>
+            <!--/.panel -->
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title of-h">
+                        <a class="accordion-toggle" data-toggle="collapse"
+                            href="#collapseInner105"><span itemprop="menu">김말이</span>
+                        </a>
+                        <div class="basic-option-group">
+                            <strong class="price">1,000원</strong> <span
+                                class="opt-open cur" data-toggle="collapse"
+                                href="#collapseInner105">열기</span>
+                        </div>
+                    </div>
+                </div>
+                <!--/.panel-heading -->
+
+                <div id="collapseInner105" class="panel-collapse collapse">
+                    <div class="panel-body panel-body-option">
+                        <div class="menu-info">
+                            <span class="inner-brd"><img alt="김말이" src=""></span><span
+                                class="small"></span>
+                        </div>
+                        <!--/.menu-info -->
+                        <!-- 바로결제 메뉴 : S -->
+                        <div class="select-option small" id="pricegrp_105_1">
+                            <div class="option-tit">
+                                가격 <span class="text-primary">(필수선택)</span>
+                            </div>
+                            <ul class="select-group list-unstyled list-inline">
+                                <li>&middot; 2개 : 1000원</li>
+                            </ul>
+                        </div>
+                        <!--./select-option -->
+                    </div>
+                    <!--/.panel-body -->
+                </div>
+                <!--/.panel-collapse -->
+            </div>
+            <!--/.panel -->
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-title of-h">
+                        <a class="accordion-toggle" data-toggle="collapse"
+                            href="#collapseInner108"><span itemprop="menu">야끼만두</span>
+                        </a>
+                        <div class="basic-option-group">
+                            <strong class="price">1,000원</strong> <span
+                                class="opt-open cur" data-toggle="collapse"
+                                href="#collapseInner108">열기</span>
+                        </div>
+                    </div>
+                </div>
+                <!--/.panel-heading -->
+
+                <div id="collapseInner108" class="panel-collapse collapse">
+                    <div class="panel-body panel-body-option">
+                        <div class="menu-info">
+                            <span class="inner-brd"><img alt="야끼만두" src=""></span><span
+                                class="small"></span>
+                        </div>
+                        <!--/.menu-info -->
+                                        <!-- 바로결제 메뉴 : S -->
+                                        <div class="select-option small" id="pricegrp_108_1">
+                                            <div class="option-tit">
+                                                가격 <span class="text-primary">(필수선택)</span>
+                                            </div>
+                                            <ul class="select-group list-unstyled list-inline">
+                                                <li>&middot; 2개 : 1000원</li>
+                                            </ul>
+                                        </div>
+                                        <!--./select-option -->
+                                    </div>
+                                    <!--/.panel-body -->
+                                </div>
+                                <!--/.panel-collapse -->
+                            </div>
+                            <!--/.panel -->
+                        </div>
+                        <!--/.panel-inner-group -->
+                    </div>
+                    <!--/.panel-body -->
+                </div>
+                <!--/.panel-collapse -->
+            </div>
+            <!--/.panel -->
+             <div class="panel panel-default">
+            <div class="panel-heading collapsed">
+
+                <h3 class="panel-title panel-Order">
+                    <a class="accordion-toggle-order" data-toggle="collapse"
+                        href="#collapseRecMenu-order">주문하기</a>
+                </h3>
+            </div>
+            <!--/.panel-heading -->
+<div id="collapseRecMenu" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="row rec-menu">
+
+                         <!-- Twin Layout -->
+                          <div class="twin_layout">
+                                                 
+          <div class="left_area">
+          <form id="CKmenu" name="form">
+          <div class="mm mm1">
+                 <h5>치킨메뉴</h5>     
+
+                  <p><input id="item1" type="checkbox" name="chk" value="12000" onclick="itemSum(this.form, 0);Orderlist('순살후라이드',this, 'toggle1','item1');">
+                     <label for="item1"><em>순살후라이드 <span> 12,000</span>
+                
+                     </em></label>
+                     <div class="toggle" id="toggle1" style="display:none;">
+                     <input type="text" id="item1Amount" size="3" value="1" name="amount">
+                     <input class="btn-default" type="button" value="+" onclick="plus('item1');">
+                     <input  class="btn-default" type="button" value="-" onclick="minus('item1');">
+                     </div>
+                  </p>
+                  <p><input id="item2" type="checkbox" name="chk" value="14000" onclick="itemSum(this.form, 1);Orderlist('순살양념치킨',this, 'toggle2','item2');">
+                     <label for="item2"><em>순살양념치킨<span> 14,000</span></em></label>
+                     
+                     <div class="toggle" id="toggle2" style="display:none;">
+                     <input type="text" id="item2Amount" size="3" value="1" name="amount" onchange="change();">
+                     <input class="btn-default" type="button" value="+" onclick="plus('item2');">
+                     <input class="btn-default" type="button" value="-" onclick="minus('item2');">
+                     </div>
+                     
+                     </p>
+                  <p><input id="item3" type="checkbox" name="chk" value="14000" onclick="itemSum(this.form, 2);Orderlist('순살간장치킨',this, 'toggle3','item3');">
+                     <label for="item3"><em>순살간장치킨<span> 14,000</span></em></label>
+                     <div class="toggle" id="toggle3" style="display:none;">
+                     <input type="text" id="item3Amount" size="3" value="1" name="amount" onchange="change();">
+                     <input class="btn-default" type="button" value="+" onclick="plus('item3');">
+                     <input class="btn-default" type="button" value="-" onclick="minus('item3');">
+                     </div>
+                     </p>
+                  <p><input id="item4" type="checkbox" name="chk" value="15000" onclick="itemSum(this.form, 3);Orderlist('양념반_후라이드반',this, 'toggle4','item4');">
+                  <label for="item4"><em>양념반+후라이드반<span> 15,000</span></em></label>
+                  <div class="toggle" id="toggle4" style="display:none;">
+                     <input type="text" id="item4Amount" size="3" value="1" name="amount" onchange="change();">
+                     <input class="btn-default" type="button" value="+" onclick="plus('item4');">
+                     <input class="btn-default" type="button" value="-" onclick="minus('item4');">
+                  </div>
+                     </p>
+                  <p><input id="item5" type="checkbox" name="chk" value="16000" onclick="itemSum(this.form, 4);Orderlist('텐더후라이드_모듬감자',this, 'toggle5','item5');">
+                  <label for="item5"><em>텐더후라이드&amp;모듬감자<span> 16,000</span></em></label>
+                  <div class="toggle" id="toggle5" style="display:none;">
+                     <input type="text" id="item5Amount" size="3" value="1" name="amount">
+                     <input class="btn-default" type="button" value="+" onclick="plus('item5');">
+                     <input class="btn-default" type="button" value="-" onclick="minus('item5');">
+                  </div>
+                     </p>
+          </div>
+                                                    
+          <div class="mm mm2">
+          <h5>떡볶이메뉴</h5>
+          
+          <p><input id="item6" type="checkbox" name="chk" value="3000" onclick="itemSum(this.form, 5);Orderlist('매운국물떡볶이',this, 'toggle6','item6');">
+            <label for="item6"><em>매운국물떡볶이<span> 3,000</span></em></label>
+            <div class="toggle" id="toggle6" style="display:none;">
+                     <input type="text" id="item6Amount" size="3" value="1" name="amount" onchange="change();">
+                     <input class="btn-default" type="button" value="+" onclick="plus('item6');">
+                     <input  class="btn-default" type="button" value="-" onclick="minus('item6');">
+                     <!-- 맛 체크 (하나만 선택 가능)-->
+                     <div class="taste">
+                     <input type="radio" id="taste1" name="taste" checked><label for="taste1">매운맛</label>
+                     <input type="radio" id="taste2" name="taste" ><label for="taste2">보통맛</label>
+                     <input type="radio" id="taste3" name="taste" ><label for="taste3">순한맛</label>
+                     </div>
+                     <!--  -->
+            </div>
+                     </p>
+          <p><input id="item7" type="checkbox" name="chk" value="6000" onclick="itemSum(this.form, 6);Orderlist('오떡',this, 'toggle7','item7');">
+             <label for="item7"><em>오떡(오뎅+떡볶이)<span> 6,000</span></em></label>
+             <div class="toggle" id="toggle7" style="display:none;">
+                     <input type="text" id="item7Amount" size="3" value="1" name="amount" onchange="change();">
+                     <input class="btn-default" type="button" value="+" onclick="plus('item7');">
+                     <input  class="btn-default" type="button" value="-" onclick="minus('item7');">
+             </div>
+                     </p>
+          <p><input id="item8" type="checkbox" name="chk" value="1000" onclick="itemSum(this.form, 7);Orderlist('주먹밥',this, 'toggle8','item8');">
+             <label for="item8"><em>주먹밥<span> 1,000</span></em></label>
+             <div class="toggle" id="toggle8" style="display:none;">
+                     <input type="text" id="item8Amount" size="3" value="1" name="amount" onchange="change();">
+                     <input class="btn-default" type="button" value="+" onclick="plus('item8');">
+                     <input class="btn-default" type="button" value="-" onclick="minus('item8');">
+             </div>
+                     </p>
+          <p><input id="item9" type="checkbox" name="chk" value="1000" onclick="itemSum(this.form, 8);Orderlist('김말이(2개)',this, 'toggle9','item9');">
+             <label for="item9"><em>김말이(2개)<span> 1,000</span></em></label>
+             <div class="toggle" id="toggle9" style="display:none;">
+                     <input type="text" id="item9Amount" size="3" value="1" name="amount">
+                     <input class="btn-default" type="button" value="+" onclick="plus('item9');">
+                     <input class="btn-default" type="button" value="-" onclick="minus('item9');">
+             </div>
+                     </p>
+          <p><input id="item10" type="checkbox" name="chk" value="1000" onclick="itemSum(this.form, 9);Orderlist('야끼만두',this, 'toggle10','item10');">
+             <label for="item10"><em>야끼만두(2개)<span> 1,000</span></em></label>
+             	<div class="toggle" id="toggle10" style="display:none;">
+                     <input type="text" id="item10Amount" size="3" value="1" name="amount">
+                     <input class="btn-default" type="button" value="+" onclick="plus('item10');">
+                     <input class="btn-default" type="button" value="-" onclick="minus('item10');">
+                </div>
+                     </p>
+             
+         </div>
+          
+         <div class="right_area">
+         <!-- Nemo -->
+         <div class="nemo">
+         <ul id="order_list">
+         <li> <p>총 금액 : <input id="total_num" value="0" name="total_sum" type="text" size="12" readonly> 원</p>
+         </li>
+         </ul> 
+         </div>
+         </div>
+         <div class="btn_area">
+              <input id="cashBtn" type="button" value="결제하기" class="btn-danger">
+         </div> 
+         </form>   
+         </div>        
+         </div>
+                                                  <!--// Twin Layout -->
+                                                   
+<!--
+												<div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">
+	                                            <form id="Dmenu" name="form" method="get" action="">
+                                        
+                                                    <div class="addmm">
+                                                    <select name="addItem" id="addItem">
+                                                        <option value="0" >추가 옵션 선택</option>
+                                                        <option value="500">+500</option>
+                                                        <option value="1000">+1,000</option> 
+                                                        <option value="3000">+3,000</option> 
+                                                    </select>
+                                                    </div>
+                                                    
+      </form>											
+				</div>
+-->
+												
+				</div>
+				</div>
+				<!--/.panel-body -->
+				</div>
+									<!--/.panel-collapse -->
+								</div>
+							</section>
+							<!--// Menu-sect -->
+						</div>
+						<!--/.box -->
+
+						<!-- (s)150716원산지표기 -->
+						<div class="origin-mark">
+							<dl>
+								<dt>원산지</dt>
+								<dd>닭고기(국내산),쌀(국내산),고추가루(중국산).</dd>
+							</dl>
+						</div>
+						<!-- (e)150716원산지표기 -->
+
+					</div>
+					<!--// -------------------- Menu Area -------------------- -->
+
+
+        <!-- -------------------- Review Area -------------------- -->
+        <div id="review">
+            <!-- Navi Tabs -->
+            <ul class="nav nav-tabs nav-justified">
+                <li><a href="#menu" class="mn" onclick="clkMenu();return false;">메뉴</a></li>
+                <li class="active rt-brd"><a href="#review" class="rv" onclick="clkReview();return false;">리뷰</a></li>
+            </ul>
+            <!--// Navi Tabs -->
+            <div class="box no-tp-brd">
+                <h2 class="sr-only">리뷰</h2>
+                <!-- 리뷰섹션 -->
+                <section class="review-sect">
+
+                    <!-- 리뷰보기 : S -->
+                    <section class="view-review">
+                        <!-- 리뷰 : S -->
+                        <div class="media small" itemprop="review" itemscope
+                            itemtype="http://schema.org/Review">
+                            <!-- 회원 썸네일 : S -->
+                            <a class="pull-left" href="javascript:return false;"> <span
+                                class="inner-brd"> <img class="media-object"
+                                    src="images/memPhoto/ownerImg.png"
+                                    alt="알려드립니다<">
+                            </span>
+                            </a>
+
+                            <div class="media-body">
+
+                                <div class="media-heading">
+                                    <strong class="nick"><span itemprop="author">알려드립니다</span></strong>
+                                    <em>|</em>
+                                    <time datetime="2017-03-22" pubdate>
+                                        <span itemprop="datePublished">2017-03-22</span>
+                                    </time>
+                                    <span class="rating pull-left"> <span
+                                        itemprop="reviewRating" itemscope
+                                        itemtype="http://schema.org/Rating">
+                                            <meta itemprop="ratingValue" content="0">
+                                    </span> <span class="img_star star_rate"><span
+                                            class="img_star inner_star" style="width: 0.00%;">별점</span></span>
+                                    </span>
+                                    <!-- 별점 -->
+                                </div>
+                                <p id="Review_Cont0" itemprop="reviewBody">더바스켓입니다~~
+                                    저희업소는 항상 국내산순살치킨만 사용합니다~ 업소 매뉴창에서 원산지 꼭확인 하시길바랍니다~ 기름은 당연히
+                                    꺠끗한기름만 사용합니다~~^^ 치킨가격을 낮춰 나가다보니 콜라가 기본으로 제공하지 않습니다~ 필요하시면
+                                    따로 주문부탁드립니다~~(순살치킨 맛있게 먹는법!! 떡볶이 국물에 순살치킨을 푸욱 찍어드시면 색다른 맛을
+                                    즐기실수있습니다~)</p>
+                                <div class="review-control of-h">
+                                    <div class="pull-left"></div>
+                                    <!--<div class="pull-right fav cur">  좋아요 한 경우 on클래스 추가 // '좋아요' -> '좋아요취소'로 바뀜
+                                                    <span class="ir-el"></span><u>좋아요</u> <strong>0</strong>
+                                                </div>-->
+                                </div>
+                                <!--/.review-control -->
+                            </div>
+                            <!--/.media-body -->
+                        </div>
+                        <!--/.media -->
+
+                        <!-- 리뷰 : S -->
+                        <div class="media small">
+                            <!-- 회원 썸네일 : S -->
+                            <a class="pull-left" href="javascript:return false;"> <span
+                                class="inner-brd"> <img class="media-object"
+                                    src="images/memPhoto/mamber_2.jpg"
+                                    alt="hone****<">
+                            </span>
+                            </a>
+
+                            <div class="media-body">
+
+                                <div class="media-heading">
+                                    <strong class="nick"><span itemprop="author">hone****</span></strong>
+                                    <em>|</em>
+                                    <time datetime="2017-04-01" pubdate>
+                                        <span itemprop="datePublished">2017-04-01</span>
+                                    </time>
+                                    <em>|</em>
+                                    <a href="#reply"  onclick="OpenInfo('pop1'); return false;">댓글달기</a>
+                                    <span class="rating pull-left"> <span
+                                        itemprop="reviewRating" itemscope
+                                        itemtype="http://schema.org/Rating">
+                                            <meta itemprop="ratingValue" content="4">
+                                    </span> <span class="img_star star_rate"><span
+                                            class="img_star inner_star" style="width: 80.00%;">별점</span></span>
+                                    </span>
+                                    <!-- 별점 -->
+                                </div>
+                                <p id="Review_Cont1" itemprop="reviewBody">치킨은 좀 딱딱했고
+                                    떡볶이랑 감자는 살짝 짰어요ㅠㅠ 세트 구성은 좋은 것 같아요</p>
+                                            <div class="img-review-group">
+                                    <!-- 리뷰 이미지가 있는 경우 추가 : S -->
+                                    <ul class="bxslider">
+                                      <li><img src="images/review/review_image1.png" /></li>
+                                      <li><img src="images/review/review_image2.png" /></li>
+                                      <li><img src="images/review/review_image3.png" /></li>
+                                    </ul>
+
+                                    <div id="bx-pager">
+                                    <ul>
+                                      <li><a data-slide-index="0" href=""><img src="images/review/review_image1.png" /></a></li>
+                                      <li><a data-slide-index="1" href=""><img src="images/review/review_image2.png" /></a></li>
+                                      <li><a data-slide-index="2" href=""><img src="images/review/review_image3.png" /></a></li>
+                                    </ul>
+                                    </div>
+
+                                    <!--<img class="lazy"
+                                        data-original="images/review/SB_231DEE33471350361_b.jpg" alt="">  -->
+                                </div>
+
+                                <!-- 레이어팝업 -->
+                                <div id="pop1" class="layerpop">
+                                    <div class="reply_form">
+                                        <textarea rows="5" cols="75" id="reply_area"></textarea>
+                                        <button onclick="sendComment(); return false;" style="color:red; float:right">comment</button>
+                                        <button onclick="CloseInfo('pop1'); return false;" style="float:right">close</button>
+                                    </div>
+                                </div>
+                                <!--// 레이어팝업 -->
+
+
+                    
+                                <!--/.img-review-group -->
+                                <div class="review-control of-h">
+                                    <div class="pull-left"></div>
+                                </div>
+                                <!--/.review-control -->
+                                <!-- 사장님 댓글 있는 경우 : S -->
+                                <div class="review-reply">
+
+                                    <div class="reply-row">
+                                        <strong class="nick">사장님</strong> <em>|</em>
+                                        <time datetime="2017-04-01" pubdate>2017-04-01</time>
+                                        <p>hone****님, 좋은 리뷰 고맙습니다 주문할떄 말씀해주시면 떡볶이는 조정
+                                            가능합니다~감자도 웨지감자로 변경가능합니다</p>
+                                    </div>
+                                    <!--./reply-row -->
+                                </div>
+                                <!--./review-reply -->
+                            </div>
+                            <!--/.media-body -->
+                        </div>
+                        <!--/.media -->
+
+                    </section>
+                </section>
+                <!--// 리뷰섹션 -->
+
+
+            </div>
+            <!--/.box -->
+        </div>
+        <!--// -------------------- Review Area -------------------- -->
+
+				</div>
+				<!--// Main Info -->
+			</div>
+			<!--// Row -->
+		</section>
+		<!--// Shop Info -->
+	</div>
+	<!--// Container -->
+	
+</div>
+<!--// Wrap -->
+<!-- Footer -->
+<footer>
+	<section class="foot-area">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<ul class="lnk list-inline xsmall">
+				<li><a href="#"	title="유캔 Do Eat 소개">유캔 Do Eat 소개</a> <em>|</em></li>
+				<li><a href="#"	title="바로결제란">바로결제란</a> <em>|</em></li>
+				<li><a href="#"	title="이용약관">이용약관</a> <em>|</em></li>
+				<li><a href="#"	title="전자금융거래 이용약관">전자금융거래 이용약관</a> <em>|</em></li>
+				<li><a href="#"	title="개인정보처리방침"><strong>개인정보처리방침</strong></a> <em>|</em></li>
+				<li><a href="#"	title="광고신청">광고신청</a> <em>|</em></li>
+				<li><a href="#" title="문의하기">문의하기</a> <em>|</em></li>
+				<li><a href="#" title="회사소개">회사소개</a> <em>|</em></li>
+				<li><a href="#" title="사장님사이트">사장님사이트</a> <em>|</em></li>
+				<li class="blog"><a href="#" title="블로그 바로가기">블로그 바로가기</a> <em>|</em></li>
+				</ul>
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<!-- Company Info -->
+				<div class="woowa-info xsmall text-muted">
+					<div>
+						유캔 Do Eat 콜센터 : 1644-0025 (24시간운영, 연중무휴) 
+						<a href="#" class="mail">메일보내기</a>
+					</div>
+					<div>
+						(주)권임심조 <span>대표 : 조하용</span> <span>사업자번호 : 120-87-65763</span>
+						<a class="bizinfo" target="_blank" href="#">사업자정보확인</a>
+					</div>
+					<div>
+						통신판매업 : 서울 송파 -0515 <span>주소 :
+							<address>서울특별시 송파구 위례성대로 2 장은빌딩 18층</address>
+						</span>
+					</div>
+					<!-- 전자금융거래이용약관 -->
+					<div class="cs-fc">
+						<p>전자금융분쟁처리</p>
+						<span>Tel : 1644-0025</span> <span>Fax : 02-532-5854</span> <span>메일
+							: help@woowahan.com</span>
+					</div>
+					<div class="copyright">copyright Woowa Brothers in Song-pa</div>
+					<!--// 전자금융거래이용약관 -->
+				</div>
+				<!--// Company Info -->
+			</div>
+		</div>
+		<!--// row -->
+		<div class="foot-info xsmall text-muted">
+			유캔 Do Eat은 통신판매중개자이며 통신판매의 당사자가 아닙니다. 
+			따라서 유캔 Do Eat은 상품 거래정보 및 거래에 대해 책임지지 않습니다.
+		</div>
+	</section>
+	<!--// foot-area -->
+
+	<!-- Award Area -->
+	<section class="award-area">
+		<ul id="award" class="award list-inline xsmall">
+		<li><span class="award1">kisa</span><em>대한민국 인터넷 대상<br>국무총리상
+				수상
+		</em></li>
+		<li><span class="award2">kisa</span><em>지식경제부 선정<br>올해의
+				청년기업인
+		</em></li>
+		<li><span class="award3">kisa</span><em>2012 스마트앱어워드<br>생활편의부분
+				대상
+		</em></li>
+		<li><span class="award1">kisa</span><em>2012 한국인터넷진흥원<br>중소벤처
+				유망 LBS 선정
+		</em></li>
+		<li><span class="award4">kisa</span><em>대한민국 스마트 TV 앱<br>이노베이션
+				선정
+		</em></li>
+		</ul>
+		<button type="button" class="nextcrs">다음으로</button>
+	</section>
+	<!--// Award Area -->
+</footer>
+<!--// Footer -->
+</body>
+</html>
